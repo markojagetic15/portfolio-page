@@ -1,0 +1,53 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  transition: opacity 0.45s ease;
+}
+
+.out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  animation: pulse 0.8s ease infinite alternate;
+}
+
+.bracket { color: var(--accent); }
+.initials { color: var(--text); margin: 0 3px; }
+
+@keyframes pulse {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
+
+.progressTrack {
+  width: 120px;
+  height: 2px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 1px;
+  animation: fill 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}

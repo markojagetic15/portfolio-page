@@ -1,0 +1,211 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+  transition: all 0.3s ease;
+}
+
+.nav.scrolled {
+  background: rgba(8, 11, 20, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 60px;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: -0.5px;
+}
+
+.logoBracket { color: var(--accent); }
+.logoName { color: var(--text); margin: 0 2px; }
+
+.links {
+  position: relative;
+  display: flex;
+  list-style: none;
+  gap: 4px;
+}
+
+.indicator {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.link:hover,
+.linkActive {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kbdHint {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-subtle);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 2px 6px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .kbdHint { display: none; }
+}
+
+.cta {
+  background: var(--accent);
+  color: #080b14;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.cta:hover {
+  background: #79baff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(88, 166, 255, 0.3);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  position: relative;
+  z-index: 101;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburgerOpen span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburgerOpen span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburgerOpen span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu overlay */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 11, 20, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobileLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 48px;
+}
+
+.mobileLink {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 32px;
+  font-weight: 600;
+  padding: 12px 32px;
+  letter-spacing: -1px;
+  transition: color 0.2s;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.mobileLink:hover,
+.mobileLinkActive {
+  color: var(--text);
+}
+
+.mobileCta {
+  background: var(--accent);
+  color: #080b14;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 40px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.mobileCta:hover {
+  background: #79baff;
+}
+
+@media (max-width: 768px) {
+  .nav, .nav.scrolled { padding: 16px 24px; }
+  .links { display: none; }
+  .cta { display: none; }
+  .hamburger { display: flex; }
+}

@@ -1,0 +1,34 @@
+/* Hide system cursor on pointer devices only */
+@media (hover: hover) {
+  * { cursor: none !important; }
+}
+
+/* Small dot — follows mouse almost instantly */
+.dot {
+  position: fixed;
+  top: -3px;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Larger ring — lags behind with lerp */
+.ring {
+  position: fixed;
+  top: -18px;
+  left: -18px;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(88, 166, 255, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  will-change: transform, opacity;
+}
