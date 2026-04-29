@@ -8,6 +8,7 @@ import { Nav } from "../../../widgets/nav";
 import { Footer } from "../../../widgets/footer";
 import { CommandPalette } from "../../../features/command-palette";
 import { EasterEgg } from "../../../features/easter-egg";
+import { GravityMaze } from "../../../widgets/gravity-maze";
 import PageLoader from "../../../shared/ui/page-loader/PageLoader";
 import ParticleBackground from "../../../shared/ui/particle-background/ParticleBackground";
 import ScrollProgress from "../../../shared/ui/scroll-progress/ScrollProgress";
@@ -35,6 +36,8 @@ export default function HomePage() {
         <Experience />
         <Divider />
         <Projects />
+        <Divider />
+        <GravityMaze />
         <Divider />
         <Skills />
         <Divider />

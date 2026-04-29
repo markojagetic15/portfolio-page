@@ -31,6 +31,13 @@ const DownloadIcon = () => (
     <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
   </svg>
 );
+const GameIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/>
+    <circle cx="15" cy="11" r="1"/><circle cx="17" cy="13" r="1"/>
+    <path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
+  </svg>
+);
 
 const scrollTo = (id: string) =>
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -50,7 +57,8 @@ export default function CommandPalette() {
     { id: "contact",      label: "Go to Contact",      group: "Navigate", icon: <ArrowIcon />, action: () => scrollTo("contact") },
     { id: "email",        label: "Copy email address", group: "Connect",  icon: <MailIcon />,  action: () => navigator.clipboard.writeText("marko.jagetic3@gmail.com") },
     { id: "linkedin",     label: "Open LinkedIn",      group: "Connect",  icon: <ExternalIcon />, action: () => window.open("https://www.linkedin.com/in/marko-jagetić", "_blank") },
-    { id: "cv",           label: "Download CV",        group: "Download", icon: <DownloadIcon />, action: () => { const a = document.createElement("a"); a.href = "/cv.pdf"; a.download = ""; a.click(); } },
+    { id: "cv",           label: "Download CV",        group: "Download", icon: <DownloadIcon />, action: () => { const a = document.createElement("a"); a.href = "/portfolio-page/cv.pdf"; a.download = ""; a.click(); } },
+    { id: "maze",         label: "Play Gravity Maze",  group: "Fun",      icon: <GameIcon />,     action: () => scrollTo("game") },
   ];
 
   const filtered = query.trim()

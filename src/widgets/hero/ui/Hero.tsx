@@ -181,7 +181,7 @@ export default function Hero() {
           >
             View projects
           </a>
-          <a href="/cv.pdf" download className={styles.btnGhost}>
+          <a href="/portfolio-page/cv.pdf" download className={styles.btnGhost}>
             <DownloadIcon />
             Download CV
           </a>
