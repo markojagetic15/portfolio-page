@@ -3,7 +3,7 @@ export interface Project {
   description: string;
   tech: string[];
   link: string;
-  repo: string;
   gradient: string;
   category: string;
+  image?: string;
 }
