@@ -40,7 +40,7 @@ export default function About() {
 
           <div className={`${styles.photoWrap} reveal`} ref={rightRef}>
             <div className={styles.photo}>
-              <img src='/portfolio-page/photo.jpeg' alt="Marko Jagetić" />
+              <img src='/photo.jpeg' alt="Marko Jagetić" />
             </div>
             <div className={styles.photoBorder} />
           </div>

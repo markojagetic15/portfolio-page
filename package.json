@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://markojagetic15.github.io/portfolio-page",
+  "homepage": "https://jagetic.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
