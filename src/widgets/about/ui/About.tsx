@@ -2,9 +2,9 @@ import { useReveal } from "../../../shared/lib/hooks/useReveal";
 import styles from "./About.module.css";
 
 const values = [
-  "Performance-obsessed — TTI, bundle size, render cost",
-  "Architecture-first — Feature-Sliced Design, Atomic Design",
-  "Remote-first, async-friendly, always over-communicating",
+  { label: "Performance-obsessed", desc: "TTI, bundle size, render cost" },
+  { label: "Architecture-first", desc: "Feature-Sliced Design, Atomic Design" },
+  { label: "Remote-first", desc: "async-friendly, always over-communicating" },
 ];
 
 export default function About() {
@@ -30,19 +30,25 @@ export default function About() {
             </p>
             <ul className={styles.values}>
               {values.map((v) => (
-                <li key={v} className={styles.value}>
-                  <span className={styles.valueDot} />
-                  {v}
+                <li key={v.label} className={styles.value}>
+                  <span className={styles.valueLabel}>{v.label}</span>
+                  <span className={styles.valueSep}>—</span>
+                  <span className={styles.valueDesc}>{v.desc}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className={`${styles.photoWrap} reveal`} ref={rightRef}>
+            <div className={styles.photoGlow} />
             <div className={styles.photo}>
               <img src='/photo.jpeg' alt="Marko Jagetić" />
+              <div className={styles.photoOverlay} />
             </div>
-            <div className={styles.photoBorder} />
+            <div className={styles.photoStatus}>
+              <span className={styles.statusDot} />
+              <span className={styles.statusText}>Available for new projects</span>
+            </div>
           </div>
         </div>
       </div>

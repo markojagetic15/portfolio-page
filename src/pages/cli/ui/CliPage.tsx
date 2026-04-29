@@ -27,8 +27,7 @@ const WELCOME_LINES: Line[] = [
 ];
 
 const FS: Record<string, string[]> = {
-  "~": ["about.txt", "resume.pdf", "contact.txt", "projects/", "skills.txt"],
-  "~/projects": ["NomadDesk", "Codebeam", "Ledgr", "PatchworkCMS"],
+  "~": ["about.txt", "resume.pdf", "contact.txt", "skills.txt"],
 };
 
 const COMMANDS: Record<string, (args: string[], cwd: string, setCwd: (d: string) => void, navigate: () => void) => Line[]> = {
@@ -37,13 +36,10 @@ const COMMANDS: Record<string, (args: string[], cwd: string, setCwd: (d: string)
     { type: "blank", text: "" },
     { type: "output", text: "  whoami            Short bio" },
     { type: "output", text: "  ls                List files in current directory" },
-    { type: "output", text: "  ls projects       List all projects" },
     { type: "output", text: "  ls skills         List all skills" },
     { type: "output", text: "  cat about         Read about me" },
     { type: "output", text: "  cat resume        Work experience" },
     { type: "output", text: "  cat contact       Contact information" },
-    { type: "output", text: "  open <name>       Open a project (try: open NomadDesk)" },
-    { type: "output", text: "  cd projects       Change to projects directory" },
     { type: "output", text: "  cd ~              Go home" },
     { type: "output", text: "  pwd               Print working directory" },
     { type: "output", text: "  date              Current date" },
@@ -88,14 +84,6 @@ const COMMANDS: Record<string, (args: string[], cwd: string, setCwd: (d: string)
   cd: (args, cwd, setCwd) => {
     const target = args[0] ?? "~";
     if (target === "~" || target === "/") {
-      setCwd("~");
-      return [{ type: "dim", text: `  → ~/` }];
-    }
-    if (target === "projects" || target === "~/projects") {
-      setCwd("~/projects");
-      return [{ type: "dim", text: `  → ~/projects/` }];
-    }
-    if (target === ".." && cwd === "~/projects") {
       setCwd("~");
       return [{ type: "dim", text: `  → ~/` }];
     }
@@ -166,28 +154,6 @@ const COMMANDS: Record<string, (args: string[], cwd: string, setCwd: (d: string)
 
   contact: () => COMMANDS["cat"](["contact"], "~", () => {}, () => {}),
 
-  open: (args) => {
-    const target = args.join(" ").toLowerCase().replace(/\s/g, "");
-    const links: Record<string, string> = {
-      nomaddesk: "https://github.com",
-      codebeam: "https://github.com",
-      ledgr: "https://github.com",
-      patchworkcms: "https://github.com",
-    };
-    const url = links[target];
-    if (url) {
-      setTimeout(() => window.open(url, "_blank"), 100);
-      return [
-        { type: "green", text: `  Opening ${args.join(" ")}...` },
-        { type: "dim", text: `  URL: ${url}` },
-      ];
-    }
-    return [
-      { type: "error", text: `  open: ${args.join(" ") || "(null)"}: Project not found` },
-      { type: "dim", text: "  Try: open NomadDesk · open Codebeam · open Ledgr · open PatchworkCMS" },
-    ];
-  },
-
   date: () => [
     { type: "output", text: `  ${new Date().toUTCString()}` },
   ],
@@ -203,17 +169,6 @@ const COMMANDS: Record<string, (args: string[], cwd: string, setCwd: (d: string)
 
   echo: (args) => [
     { type: "output", text: `  ${args.join(" ")}` },
-  ],
-
-  "ls projects": () => [
-    { type: "yellow", text: "~/projects/" },
-    { type: "blank", text: "" },
-    { type: "accent", text: "  NomadDesk      Remote work hub — co-working spaces & live availability" },
-    { type: "accent", text: "  Codebeam       Collaborative live coding with AI-powered code review" },
-    { type: "accent", text: "  Ledgr          Personal finance dashboard with AI spending insights" },
-    { type: "accent", text: "  PatchworkCMS   Headless CMS with visual drag-and-drop page builder" },
-    { type: "blank", text: "" },
-    { type: "dim", text: "  Type 'open <name>' to open a project" },
   ],
 
   "ls skills": () => [
@@ -251,15 +206,14 @@ const COMMANDS: Record<string, (args: string[], cwd: string, setCwd: (d: string)
 
 const TOP_LEVEL_COMMANDS = [
   "back", "cat", "cd", "clear", "cls", "contact", "date",
-  "echo", "exit", "help", "history", "ls", "open", "pwd",
+  "echo", "exit", "help", "history", "ls", "pwd",
   "uname", "whoami",
 ];
 
 const ARG_COMPLETIONS: Record<string, string[]> = {
   cat:  ["about", "contact", "resume", "skills"],
-  cd:   ["..", "projects", "~"],
-  ls:   ["projects", "skills"],
-  open: ["Codebeam", "Ledgr", "NomadDesk", "PatchworkCMS"],
+  cd:   ["~"],
+  ls:   ["skills"],
   uname: ["-a"],
 };
 
