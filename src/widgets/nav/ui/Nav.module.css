@@ -74,6 +74,33 @@
   gap: 12px;
 }
 
+/* CLI terminal link */
+.cliLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.cliLink:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-hover);
+}
+
+.cliIcon {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
 .kbdHint {
   display: flex;
   gap: 3px;
@@ -207,5 +234,6 @@
   .nav, .nav.scrolled { padding: 16px 24px; }
   .links { display: none; }
   .cta { display: none; }
+  .cliLink { display: none; }
   .hamburger { display: flex; }
 }

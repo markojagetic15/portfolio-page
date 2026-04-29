@@ -1,0 +1,193 @@
+.page {
+  min-height: 100vh;
+  background: #080b14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: var(--font-mono);
+}
+
+.window {
+  width: 100%;
+  max-width: 860px;
+  min-height: 540px;
+  max-height: calc(100vh - 48px);
+  background: #0d1117;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.titleBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #161b22;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.dots {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.15s;
+}
+
+a.dot:hover {
+  opacity: 1;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.titleText {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-subtle);
+  letter-spacing: 0.3px;
+}
+
+.exitBtn {
+  font-size: 11px;
+  color: var(--text-subtle);
+  transition: color 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.exitBtn:hover {
+  color: var(--text-muted);
+}
+
+.terminal {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #30363d #0d1117;
+}
+
+.line {
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre;
+  font-family: var(--font-mono);
+  user-select: text;
+}
+
+.welcome { color: var(--text); }
+.output { color: var(--text); }
+.prompt { color: var(--text-muted); }
+.error { color: #f85149; }
+.dim { color: var(--text-subtle); }
+.accent { color: var(--accent); }
+.green { color: var(--green); }
+.yellow { color: var(--orange); }
+.blank { height: 6px; }
+
+.tabHint {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  padding: 6px 0 2px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 4px;
+}
+
+.tabHintItem {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 4px;
+  padding: 4px 0 8px;
+}
+
+.inputPrompt {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.promptUser { color: var(--green); }
+.promptAt { color: var(--text-subtle); }
+.promptHost { color: var(--accent); }
+.promptColon { color: var(--text-subtle); }
+.promptCwd { color: var(--purple); }
+.promptDollar { color: var(--text-muted); margin: 0 8px 0 0; }
+
+.input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  flex: 1;
+  caret-color: var(--green);
+  line-height: 1.7;
+}
+
+/* Line type overrides — CSS Modules requires explicit class names */
+.line.prompt {
+  color: var(--text-muted);
+}
+
+.line.error {
+  color: #f85149;
+}
+
+.line.dim {
+  color: var(--text-subtle);
+}
+
+.line.accent {
+  color: var(--accent);
+}
+
+.line.green {
+  color: var(--green);
+}
+
+.line.yellow {
+  color: var(--orange);
+}
+
+.line.blank {
+  min-height: 8px;
+  line-height: 1;
+}
+
+@media (max-width: 600px) {
+  .page { padding: 0; align-items: stretch; }
+  .window { border-radius: 0; max-height: 100vh; }
+  .titleText { display: none; }
+  .terminal { padding: 12px 14px 8px; }
+  .line { font-size: 12px; }
+  .inputPrompt { font-size: 12px; }
+  .input { font-size: 12px; }
+}
