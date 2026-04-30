@@ -22,7 +22,8 @@ export const projects: Project[] = [
     category: "Real-time",
     image: "/oa.png",
     private: false
-  },{
+  },
+  {
     title: "Udomi me",
     description:
       "Udomi Me connects animals in need with people who care. Find your new best friend today — completely free.",
@@ -33,5 +34,16 @@ export const projects: Project[] = [
     image: "/udomi-me.png",
     private: false,
     wip: true
+  },
+  {
+    title: "HOPS",
+    description:
+      "The mission of HOPS is to manage the electricity system of the Republic of Croatia, transmit electricity, and maintain, develop, and build the transmission network in order to provide reliable supply to users at minimal costs and with care for environmental preservation.",
+    tech: ["Vue.js", "C#", "Postgres", "Typescript"],
+    link: "https://www.hops.hr/",
+    gradient: "linear-gradient(135deg, #06b6d4, #14b8a6)",
+    category: "Real-time",
+    image: "/hops.png",
+    private: false,
   },
 ];
