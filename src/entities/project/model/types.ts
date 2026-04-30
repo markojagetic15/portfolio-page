@@ -6,4 +6,6 @@ export interface Project {
   gradient: string;
   category: string;
   image?: string;
+  private: boolean;
+  wip?: boolean;
 }
