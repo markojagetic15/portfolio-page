@@ -28,7 +28,7 @@ export const projects: Project[] = [
     description:
       "Udomi Me connects animals in need with people who care. Find your new best friend today — completely free.",
     tech: ["React", "Nest.JS", "Postgres", "Typescript"],
-    link: "",
+    link: "https://udomi-me.com/",
     gradient: "linear-gradient(135deg, #06b6d4, #14b8a6)",
     category: "Real-time",
     image: "/udomi-me.png",
