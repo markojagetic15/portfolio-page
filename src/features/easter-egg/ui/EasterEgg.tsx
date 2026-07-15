@@ -76,7 +76,7 @@ export default function EasterEgg() {
           You typed <code>hire me</code> — let's make it official.
         </p>
         <a
-          href="mailto:marko.jagetic3@gmail.com"
+          href="mailto:marko@jagetic.com"
           className={styles.cta}
           onClick={e => e.stopPropagation()}
         >

@@ -138,7 +138,7 @@ const COMMANDS: Record<string, (args: string[], cwd: string, setCwd: (d: string)
     if (file === "contact") return [
       { type: "yellow", text: "contact.txt" },
       { type: "blank", text: "" },
-      { type: "output", text: "  Email:      marko.jagetic3@gmail.com" },
+      { type: "output", text: "  Email:      marko@jagetic.com" },
       { type: "output", text: "  LinkedIn:   linkedin.com/in/marko-jagetić" },
       { type: "output", text: "  Location:   Zagreb, Croatia (UTC+1)" },
       { type: "output", text: "  Timezone:   Available 09:00–18:00 CET" },

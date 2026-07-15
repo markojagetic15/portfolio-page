@@ -19,7 +19,7 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     const { name, email, message } = form;
-    const mailto = `mailto:marko.jagetic3@gmail.com?subject=${encodeURIComponent(`Portfolio contact from ${name}`)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+    const mailto = `mailto:marko@jagetic.com?subject=${encodeURIComponent(`Portfolio contact from ${name}`)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
     window.open(mailto);
     setTimeout(() => {
       setStatus("sent");
@@ -44,7 +44,7 @@ export default function Contact() {
               </p>
               <div className={styles.actions}>
                 <MagneticButton>
-                  <a href="mailto:marko.jagetic3@gmail.com" className={styles.btnPrimary}>
+                  <a href="mailto:marko@jagetic.com" className={styles.btnPrimary}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="2" y="4" width="20" height="16" rx="2"/>
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>

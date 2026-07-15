@@ -90,11 +90,11 @@ export default function Hero() {
   const copyEmail = async (e: React.MouseEvent) => {
     e.preventDefault();
     try {
-      await navigator.clipboard.writeText("marko.jagetic3@gmail.com");
+      await navigator.clipboard.writeText("marko@jagetic.com");
       setToast(true);
       setTimeout(() => setToast(false), 2200);
     } catch {
-      window.location.href = "mailto:marko.jagetic3@gmail.com";
+      window.location.href = "mailto:marko@jagetic.com";
     }
   };
 
@@ -134,7 +134,7 @@ export default function Hero() {
                 <span className={styles.statusVal}>&lt; 24 hours</span>
               </div>
               <a
-                href="mailto:marko.jagetic3@gmail.com"
+                href="mailto:marko@jagetic.com"
                 className={styles.statusCta}
                 onClick={() => setStatusOpen(false)}
               >
@@ -200,7 +200,7 @@ export default function Hero() {
               <rect x="2" y="4" width="20" height="16" rx="2"/>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
             </svg>
-            marko.jagetic3@gmail.com
+            marko@jagetic.com
           </a>
           <span className={styles.socialDivider}>·</span>
           <a href="https://www.linkedin.com/in/marko-jagetić" target="_blank" rel="noreferrer" className={styles.social}>

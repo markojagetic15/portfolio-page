@@ -39,7 +39,7 @@ export default function Footer() {
 
           <div className={styles.socials}>
             <MagneticButton strength={0.45}>
-              <a href="mailto:marko.jagetic3@gmail.com" className={styles.social} aria-label="Email">
+              <a href="mailto:marko@jagetic.com" className={styles.social} aria-label="Email">
                 <EmailIcon />
               </a>
             </MagneticButton>

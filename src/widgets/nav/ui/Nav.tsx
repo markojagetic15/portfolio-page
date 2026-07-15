@@ -96,7 +96,7 @@ export default function Nav() {
             <kbd className={styles.kbd}>K</kbd>
           </div>
           <MagneticButton>
-            <a href="mailto:marko.jagetic3@gmail.com" className={styles.cta}>
+            <a href="mailto:marko@jagetic.com" className={styles.cta}>
               Hire me
             </a>
           </MagneticButton>
@@ -130,7 +130,7 @@ export default function Nav() {
             </a>
           </li>
         </ul>
-        <a href="mailto:marko.jagetic3@gmail.com" className={styles.mobileCta}>
+        <a href="mailto:marko@jagetic.com" className={styles.mobileCta}>
           Hire me
         </a>
       </div>

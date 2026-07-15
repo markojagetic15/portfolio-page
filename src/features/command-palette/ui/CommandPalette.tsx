@@ -55,7 +55,7 @@ export default function CommandPalette() {
     { id: "projects",     label: "Go to Projects",     group: "Navigate", icon: <ArrowIcon />, action: () => scrollTo("projects") },
     { id: "skills",       label: "Go to Skills",       group: "Navigate", icon: <ArrowIcon />, action: () => scrollTo("skills") },
     { id: "contact",      label: "Go to Contact",      group: "Navigate", icon: <ArrowIcon />, action: () => scrollTo("contact") },
-    { id: "email",        label: "Copy email address", group: "Connect",  icon: <MailIcon />,  action: () => navigator.clipboard.writeText("marko.jagetic3@gmail.com") },
+    { id: "email",        label: "Copy email address", group: "Connect",  icon: <MailIcon />,  action: () => navigator.clipboard.writeText("marko@jagetic.com") },
     { id: "linkedin",     label: "Open LinkedIn",      group: "Connect",  icon: <ExternalIcon />, action: () => window.open("https://www.linkedin.com/in/marko-jagetić", "_blank") },
     { id: "cv",           label: "Download CV",        group: "Download", icon: <DownloadIcon />, action: () => { const a = document.createElement("a"); a.href = "/cv.pdf"; a.download = ""; a.click(); } },
   ];
