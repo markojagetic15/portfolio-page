@@ -1,6 +1,6 @@
 # jagetic.com — Personal Portfolio
 
-Personal portfolio site for Marko Jagetić, Senior Full-Stack Engineer. Built with React, TypeScript, and Vite. No UI library — all styling is hand-written with CSS Modules.
+Personal portfolio site for Marko Jagetić, Full-Stack Engineer. Built with React, TypeScript, and Vite. No UI library — all styling is hand-written with CSS Modules.
 
 Live at **[jagetic.com](https://jagetic.com)**
 

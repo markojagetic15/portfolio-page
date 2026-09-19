@@ -3,7 +3,7 @@ import { useCountUp } from "../../../shared/lib/hooks/useCountUp";
 import styles from "./Hero.module.css";
 
 const ROLES = [
-  "Senior Full-Stack Engineer",
+  "Full-Stack Engineer",
   "React & Vue Specialist",
   "Node.js & NestJS Builder",
   "API & Database Architect",
@@ -29,8 +29,8 @@ export default function Hero() {
   const typeState = useRef({ roleIdx: 0, charIdx: 0, deleting: false });
 
   const years = useCountUp(5);
-  const projs = useCountUp(15);
-  const companies = useCountUp(3);
+  const projs = useCountUp(10);
+  const companies = useCountUp(4);
 
   useEffect(() => {
     const cursor = cursorRef.current;

@@ -21,8 +21,8 @@ const WELCOME_LINES: Line[] = [
   { type: "accent", text: "│                                                     │" },
   { type: "accent", text: "└─────────────────────────────────────────────────────┘" },
   { type: "blank", text: "" },
-  { type: "dim", text: "  Marko Jagetić — Senior Full-Stack Engineer · Zagreb, Croatia" },
-  { type: "dim", text: "  5+ years · 15+ projects · React · TypeScript · Node.js" },
+  { type: "dim", text: "  Marko Jagetić — Full-Stack Engineer · Zagreb, Croatia" },
+  { type: "dim", text: "  5+ years · 10+ projects · React · TypeScript · Node.js" },
   { type: "blank", text: "" },
 ];
 
@@ -55,12 +55,12 @@ const COMMANDS: Record<string, (args: string[], cwd: string, setCwd: (d: string)
   whoami: () => [
     { type: "green", text: "Marko Jagetić" },
     { type: "blank", text: "" },
-    { type: "output", text: "  Senior Full-Stack Engineer based in Zagreb, Croatia." },
+    { type: "output", text: "  Full-Stack Engineer based in Zagreb, Croatia." },
     { type: "output", text: "  5+ years building scalable web applications across startups" },
     { type: "output", text: "  and enterprise environments." },
     { type: "blank", text: "" },
-    { type: "dim", text: "  Currently:  Software Engineer @ True North" },
-    { type: "dim", text: "  Stack:      React · TypeScript · Node.js · GraphQL" },
+    { type: "dim", text: "  Currently:  Software Engineer @ Njuškalo d.o.o." },
+    { type: "dim", text: "  Stack:      Vue.js · React · TypeScript · Node.js · GraphQL" },
     { type: "dim", text: "  Arch:       Feature-Sliced Design · Atomic Design · DDD" },
     { type: "dim", text: "  Status:     Available for contract work · Remote · B2B" },
   ],
@@ -81,7 +81,7 @@ const COMMANDS: Record<string, (args: string[], cwd: string, setCwd: (d: string)
     { type: "output", text: `/home/${PROMPT_USER}${cwd.replace("~", "")}` },
   ],
 
-  cd: (args, cwd, setCwd) => {
+  cd: (args, _cwd, setCwd) => {
     const target = args[0] ?? "~";
     if (target === "~" || target === "/") {
       setCwd("~");
@@ -112,7 +112,16 @@ const COMMANDS: Record<string, (args: string[], cwd: string, setCwd: (d: string)
     if (file === "resume") return [
       { type: "yellow", text: "resume.pdf" },
       { type: "blank", text: "" },
-      { type: "green", text: "  True North  ·  Software Engineer  ·  Aug 2024 – Present" },
+      { type: "green", text: "  Njuškalo d.o.o.  ·  Software Engineer  ·  Mar 2026 – Present" },
+      { type: "dim", text: "  ▸ Led migration of core platform modules from PHP to Vue.js" },
+      { type: "dim", text: "    to improve maintainability and user experience" },
+      { type: "dim", text: "  ▸ Engineered a revamped, flexible delivery management system with" },
+      { type: "dim", text: "    new shipping and logistics methods" },
+      { type: "dim", text: "  ▸ Ensured seamless, zero-downtime incremental rollouts for millions" },
+      { type: "dim", text: "    of active users" },
+      { type: "dim", text: "  Stack: Vue.js · PHP · TypeScript" },
+      { type: "blank", text: "" },
+      { type: "green", text: "  True North  ·  Software Engineer  ·  Aug 2024 – Mar 2026" },
       { type: "dim", text: "  ▸ Modernized enterprise tax fraud detection platform with TypeScript" },
       { type: "dim", text: "    reducing production defects by ~30%" },
       { type: "dim", text: "  ▸ 40% faster API response times via strategic server-side caching" },

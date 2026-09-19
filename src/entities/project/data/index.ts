@@ -46,4 +46,48 @@ export const projects: Project[] = [
     image: "/hops.png",
     private: false,
   },
+  {
+    title: "K-Drive",
+    description:
+      "K-Drive is a website for a car service, showcasing services offered and providing an easy way for customers to get in touch.",
+    tech: ["React", "TypeScript", "SCSS"],
+    link: "https://k-drive-autoservis.onrender.com/",
+    gradient: "linear-gradient(135deg, #f97316, #ef4444)",
+    category: "React",
+    image: "/k-drive.png",
+    private: false,
+  },
+  {
+    title: "AMS",
+    description:
+      "The Asset Management System (AMS) is a comprehensive web application that offers companies a detailed view of their assets, facilitates task and staff management, and provides real-time updates for efficient operations.",
+    tech: ["React", "TypeScript", "Node.js"],
+    link: "",
+    gradient: "linear-gradient(135deg, #f97316, #ef4444)",
+    category: "React",
+    image: "/ams.png",
+    private: true,
+  },
+  {
+    title: "Guardian",
+    description:
+      "Guardian is a solution for fraud detection which offers both real-time and near real time fraud detection together with rich visual presentation of entities and relationships between them which enables risk analysts to detect and manage fraudulent entities and events with ease.",
+    tech: ["React", "TypeScript", "Spring"],
+    link: "",
+    gradient: "linear-gradient(135deg, #f97316, #ef4444)",
+    category: "React",
+    image: "/guardian.png",
+    private: true,
+  },
+  {
+    title: "Njuškalo",
+    description:
+      "Njuškalo is Croatia's largest classifieds marketplace. Led the modernization of core platform modules by migrating a legacy PHP monolith to Vue.js, and engineered a revamped, flexible delivery management system supporting new shipping and logistics methods for millions of active users.",
+    tech: ["Vue.js", "PHP", "Twig"],
+    link: "https://njuskalo.hr",
+    gradient: "linear-gradient(135deg, #f97316, #ef4444)",
+    category: "Vue.js",
+    image: "/njuskalo.png",
+    private: false,
+  },
 ];
