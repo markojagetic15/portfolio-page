@@ -50,7 +50,7 @@ export const projects: Project[] = [
     description:
       "K-Drive is a website for a car service, showcasing services offered and providing an easy way for customers to get in touch.",
     tech: ["React", "TypeScript", "SCSS"],
-    link: "https://k-drive-autoservis.onrender.com/",
+    link: "https://k-drive-autoservis.com",
     gradient: "linear-gradient(135deg, #f97316, #ef4444)",
     category: "React",
     image: "/k-drive.png",
