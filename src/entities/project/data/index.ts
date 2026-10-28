@@ -31,9 +31,8 @@ export const projects: Project[] = [
     link: "https://udomi-me.com/",
     gradient: "linear-gradient(135deg, #06b6d4, #14b8a6)",
     category: "Real-time",
-    image: "/udomi-me.png",
+    image: "/udomi-me-com.png",
     private: false,
-    wip: true
   },
   {
     title: "HOPS",
