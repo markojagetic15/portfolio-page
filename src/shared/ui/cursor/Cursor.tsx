@@ -29,7 +29,7 @@ export default function Cursor() {
       }
     };
 
-    // Event delegation — no need to re-bind on DOM changes
+    // Event delegation - no need to re-bind on DOM changes
     const onOver = (e: MouseEvent) => {
       if ((e.target as HTMLElement).closest("a, button")) targetRingScale = 1.8;
     };

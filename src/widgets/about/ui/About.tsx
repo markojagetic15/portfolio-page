@@ -32,7 +32,7 @@ export default function About() {
               {values.map((v) => (
                 <li key={v.label} className={styles.value}>
                   <span className={styles.valueLabel}>{v.label}</span>
-                  <span className={styles.valueSep}>—</span>
+                  <span className={styles.valueSep}>-</span>
                   <span className={styles.valueDesc}>{v.desc}</span>
                 </li>
               ))}

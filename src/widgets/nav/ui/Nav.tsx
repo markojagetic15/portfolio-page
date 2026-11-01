@@ -88,15 +88,12 @@ export default function Nav() {
         </ul>
 
         <div className={styles.navRight}>
-          <a href="#/cli" className={styles.cliLink} title="Open terminal">
-            <span className={styles.cliIcon}>&gt;_</span>
-          </a>
           <div className={styles.kbdHint}>
             <kbd className={styles.kbd}>⌘</kbd>
             <kbd className={styles.kbd}>K</kbd>
           </div>
           <MagneticButton>
-            <a href="mailto:marko@jagetic.com" className={styles.cta}>
+            <a href="mailto:marko.jagetic3@gmail.com" className={styles.cta}>
               Hire me
             </a>
           </MagneticButton>
@@ -124,13 +121,8 @@ export default function Nav() {
               </button>
             </li>
           ))}
-          <li>
-            <a href="#/cli" className={styles.mobileLink} onClick={() => setMenuOpen(false)}>
-              Terminal
-            </a>
-          </li>
         </ul>
-        <a href="mailto:marko@jagetic.com" className={styles.mobileCta}>
+        <a href="mailto:marko.jagetic3@gmail.com" className={styles.mobileCta}>
           Hire me
         </a>
       </div>

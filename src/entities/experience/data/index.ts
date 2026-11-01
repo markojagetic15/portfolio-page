@@ -4,7 +4,7 @@ export const experience: Experience[] = [
   {
     company: "Njuškalo",
     role: "Software Engineer",
-    period: "Mar 2026 – Present",
+    period: "Mar 2026 - Present",
     location: "Zagreb",
     highlights: [
       "Spearheaded the modernization of a legacy monolithic architecture, leading the migration of core platform modules from PHP to a modern Vue.js frontend framework to improve maintainability and user experience",
@@ -16,7 +16,7 @@ export const experience: Experience[] = [
   {
     company: "True North",
     role: "Software Engineer",
-    period: "Aug 2024 – Mar 2026",
+    period: "Aug 2024 - Mar 2026",
     location: "Zagreb",
     highlights: [
       "Modernized enterprise-scale tax fraud detection platform by introducing TypeScript into a legacy React + Java codebase, reducing production defects by ~30%",
@@ -29,7 +29,7 @@ export const experience: Experience[] = [
   {
     company: "Valere Margins",
     role: "Software Engineer",
-    period: "Feb 2023 – Sep 2024",
+    period: "Feb 2023 - Sep 2024",
     location: "Zagreb",
     highlights: [
       "Built and launched a corporate travel booking platform from scratch using Next.js, TypeScript, GraphQL, and Material UI",
@@ -41,7 +41,7 @@ export const experience: Experience[] = [
   {
     company: "AsyncLabs",
     role: "Software Engineer",
-    period: "Feb 2022 – Feb 2023",
+    period: "Feb 2022 - Feb 2023",
     location: "Zagreb",
     highlights: [
       "Sole front-end architect for an e-learning marketplace serving thousands of active users",

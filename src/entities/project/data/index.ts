@@ -2,6 +2,39 @@ import type { Project } from "../model/types";
 
 export const projects: Project[] = [
   {
+    title: "Udomi me",
+    description:
+      "Udomi Me connects animals in need with people who care. Find your new best friend today - completely free.",
+    tech: ["React", "Nest.JS", "Postgres", "Typescript"],
+    link: "https://udomi-me.com/",
+    gradient: "linear-gradient(135deg, #06b6d4, #14b8a6)",
+    category: "Real-time",
+    image: "/udomi-me-com.png",
+    private: false,
+  },
+  {
+    title: "proarda",
+    description:
+      "proarda is a real-time collaborative workspace that brings rich-text documents, an infinite canvas and Kanban boards into one place. Every page is edited live together, with shared cursors, comments and per-page sharing permissions.",
+    tech: ["React", "Nest.JS", "Postgres", "Redis", "Yjs", "Typescript"],
+    link: "https://proarda.com/",
+    gradient: "linear-gradient(135deg, #6366f1, #06b6d4)",
+    category: "Real-time",
+    image: "/proarda.png",
+    private: false,
+  },
+  {
+    title: "Njuškalo",
+    description:
+      "Njuškalo is Croatia's largest classifieds marketplace. Led the modernization of core platform modules by migrating a legacy PHP monolith to Vue.js, and engineered a revamped, flexible delivery management system supporting new shipping and logistics methods for millions of active users.",
+    tech: ["Vue.js", "PHP", "Twig"],
+    link: "https://njuskalo.hr",
+    gradient: "linear-gradient(135deg, #f97316, #ef4444)",
+    category: "Vue.js",
+    image: "/njuskalo.png",
+    private: false,
+  },
+  {
     title: "Dwell Optimal",
     description:
       "DWELLoptimal is a pioneering real estate technology company dedicated to creating secure, integrated work and living solutions for remote workers.",
@@ -13,6 +46,28 @@ export const projects: Project[] = [
     private: false
   },
   {
+    title: "Guardian",
+    description:
+      "Guardian is a solution for fraud detection which offers both real-time and near real time fraud detection together with rich visual presentation of entities and relationships between them which enables risk analysts to detect and manage fraudulent entities and events with ease.",
+    tech: ["React", "TypeScript", "Spring"],
+    link: "",
+    gradient: "linear-gradient(135deg, #f97316, #ef4444)",
+    category: "React",
+    image: "/guardian.png",
+    private: true,
+  },
+  {
+    title: "AMS",
+    description:
+      "The Asset Management System (AMS) is a comprehensive web application that offers companies a detailed view of their assets, facilitates task and staff management, and provides real-time updates for efficient operations.",
+    tech: ["React", "TypeScript", "Node.js"],
+    link: "",
+    gradient: "linear-gradient(135deg, #f97316, #ef4444)",
+    category: "React",
+    image: "/ams.png",
+    private: true,
+  },
+  {
     title: "Omni Academy",
     description:
       "It is a community of students and people with the same interests who want to learn together, develop, socialize, travel, help each other, share experiences, and support for an easier life.",
@@ -22,17 +77,6 @@ export const projects: Project[] = [
     category: "Real-time",
     image: "/oa.png",
     private: false
-  },
-  {
-    title: "Udomi me",
-    description:
-      "Udomi Me connects animals in need with people who care. Find your new best friend today — completely free.",
-    tech: ["React", "Nest.JS", "Postgres", "Typescript"],
-    link: "https://udomi-me.com/",
-    gradient: "linear-gradient(135deg, #06b6d4, #14b8a6)",
-    category: "Real-time",
-    image: "/udomi-me-com.png",
-    private: false,
   },
   {
     title: "HOPS",
@@ -54,39 +98,6 @@ export const projects: Project[] = [
     gradient: "linear-gradient(135deg, #f97316, #ef4444)",
     category: "React",
     image: "/k-drive.png",
-    private: false,
-  },
-  {
-    title: "AMS",
-    description:
-      "The Asset Management System (AMS) is a comprehensive web application that offers companies a detailed view of their assets, facilitates task and staff management, and provides real-time updates for efficient operations.",
-    tech: ["React", "TypeScript", "Node.js"],
-    link: "",
-    gradient: "linear-gradient(135deg, #f97316, #ef4444)",
-    category: "React",
-    image: "/ams.png",
-    private: true,
-  },
-  {
-    title: "Guardian",
-    description:
-      "Guardian is a solution for fraud detection which offers both real-time and near real time fraud detection together with rich visual presentation of entities and relationships between them which enables risk analysts to detect and manage fraudulent entities and events with ease.",
-    tech: ["React", "TypeScript", "Spring"],
-    link: "",
-    gradient: "linear-gradient(135deg, #f97316, #ef4444)",
-    category: "React",
-    image: "/guardian.png",
-    private: true,
-  },
-  {
-    title: "Njuškalo",
-    description:
-      "Njuškalo is Croatia's largest classifieds marketplace. Led the modernization of core platform modules by migrating a legacy PHP monolith to Vue.js, and engineered a revamped, flexible delivery management system supporting new shipping and logistics methods for millions of active users.",
-    tech: ["Vue.js", "PHP", "Twig"],
-    link: "https://njuskalo.hr",
-    gradient: "linear-gradient(135deg, #f97316, #ef4444)",
-    category: "Vue.js",
-    image: "/njuskalo.png",
     private: false,
   },
 ];

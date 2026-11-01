@@ -73,10 +73,10 @@ export default function EasterEgg() {
         <span className={styles.emoji}>👋</span>
         <h2 className={styles.title}>Good call.</h2>
         <p className={styles.sub}>
-          You typed <code>hire me</code> — let's make it official.
+          You typed <code>hire me</code> - let's make it official.
         </p>
         <a
-          href="mailto:marko@jagetic.com"
+          href="mailto:marko.jagetic3@gmail.com"
           className={styles.cta}
           onClick={e => e.stopPropagation()}
         >

@@ -72,7 +72,7 @@ export default function Projects() {
                     {project.private ? (
                       <span
                         className={styles.privateLink}
-                        data-tooltip="Private — in development or restricted access"
+                        data-tooltip="Private - in development or restricted access"
                         aria-label="Private project"
                       >
                         <LockIcon />

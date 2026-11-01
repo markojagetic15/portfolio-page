@@ -19,7 +19,7 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     const { name, email, message } = form;
-    const mailto = `mailto:marko@jagetic.com?subject=${encodeURIComponent(`Portfolio contact from ${name}`)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+    const mailto = `mailto:marko.jagetic3@gmail.com?subject=${encodeURIComponent(`Portfolio contact from ${name}`)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
     window.open(mailto);
     setTimeout(() => {
       setStatus("sent");
@@ -44,7 +44,7 @@ export default function Contact() {
               </p>
               <div className={styles.actions}>
                 <MagneticButton>
-                  <a href="mailto:marko@jagetic.com" className={styles.btnPrimary}>
+                  <a href="mailto:marko.jagetic3@gmail.com" className={styles.btnPrimary}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="2" y="4" width="20" height="16" rx="2"/>
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
@@ -55,16 +55,6 @@ export default function Contact() {
                 <MagneticButton>
                   <a href="https://www.linkedin.com/in/marko-jagetić" target="_blank" rel="noreferrer" className={styles.btnGhost}>
                     LinkedIn
-                  </a>
-                </MagneticButton>
-                <MagneticButton>
-                  <a href="/cv.pdf" download className={styles.btnGhost}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                      <polyline points="7 10 12 15 17 10"/>
-                      <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    Download CV
                   </a>
                 </MagneticButton>
               </div>
@@ -102,7 +92,7 @@ export default function Contact() {
                     <circle cx="12" cy="12" r="10"/>
                     <path d="m9 12 2 2 4-4"/>
                   </svg>
-                  <p>Your email client should have opened — hit send and I'll get back to you within 24 hours.</p>
+                  <p>Your email client should have opened - hit send and I'll get back to you within 24 hours.</p>
                   <button className={styles.resetBtn} onClick={() => setStatus("idle")}>
                     Send another
                   </button>

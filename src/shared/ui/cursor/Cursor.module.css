@@ -3,7 +3,7 @@
   * { cursor: none !important; }
 }
 
-/* Small dot — follows mouse almost instantly */
+/* Small dot - follows mouse almost instantly */
 .dot {
   position: fixed;
   top: -3px;
@@ -18,7 +18,7 @@
   will-change: transform, opacity;
 }
 
-/* Larger ring — lags behind with lerp */
+/* Larger ring - lags behind with lerp */
 .ring {
   position: fixed;
   top: -18px;
