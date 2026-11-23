@@ -1,13 +1,11 @@
-.footer {
-  border-top: 1px solid var(--rule-strong);
-  font-size: 15px;
-  color: var(--ink-2);
-}
+.footer { background: var(--page); border-top: var(--key) solid var(--ink); font-weight: 600; }
 .inner {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  min-height: 88px;
-  padding-block: 20px;
-  row-gap: 4px;
+  justify-content: space-between;
+  gap: 8px 24px;
+  min-height: 80px;
+  padding-block: 16px;
 }
-.inner a { display: inline-block; padding-block: 12px; background-position: 0 calc(100% - 12px); color: var(--ink); }
-.doc { display: block; font-stretch: var(--narrow); font-weight: 500; color: var(--ink-3); }
+.inner a { display: inline-block; padding-block: 10px; }

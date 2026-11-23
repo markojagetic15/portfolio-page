@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { EMAIL } from "../../../shared/config";
 import styles from "./EasterEgg.module.css";
 
-const COLORS = ["#0e6b45", "#121412", "#0e6b45", "#dcebe2", "#5f665f"];
+const COLORS = ["#e2231a", "#ffcd00", "#9dd3f3", "#ffffff", "#e2231a", "#ffcd00"];
 
 interface Particle {
   id: number;
@@ -73,7 +73,7 @@ export default function EasterEgg() {
       <div className={styles.message} role="dialog" aria-label="Easter egg">
         <h2 className={styles.title}>You typed “hire me”.</h2>
         <p className={styles.sub}>Noted. The right place for that is an email.</p>
-        <a href={`mailto:${EMAIL}`} className="btn btnPrimary" onClick={(e) => e.stopPropagation()}>
+        <a href={`mailto:${EMAIL}`} className="brick btn" onClick={(e) => e.stopPropagation()}>
           Email Marko
         </a>
         <span className={styles.hint}>Click anywhere to close</span>

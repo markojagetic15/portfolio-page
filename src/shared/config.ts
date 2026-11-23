@@ -6,8 +6,8 @@ export const EMAIL = "marko.jagetic3@gmail.com";
 export const LINKEDIN = "https://www.linkedin.com/in/marko-jageti%C4%87";
 
 export const SECTIONS = [
-  { id: "applications", label: "Applications" },
+  { id: "steps", label: "Steps" },
   { id: "history", label: "History" },
-  { id: "characteristics", label: "Characteristics" },
+  { id: "parts", label: "Parts" },
   { id: "contact", label: "Contact" },
 ] as const;

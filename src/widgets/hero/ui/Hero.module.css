@@ -1,141 +1,134 @@
 .hero {
   min-height: 100svh;
-  padding-block: calc(var(--nav-h) + clamp(16px, 2.4vw, 32px)) clamp(24px, 3vw, 40px);
+  padding-block: calc(var(--nav-h) + clamp(28px, 4vw, 56px)) clamp(48px, 6vw, 80px);
   display: flex;
   align-items: center;
 }
-.hero > :global(.wrap) { flex: none; }
 
-/* Title block: the one green field on the page. */
-.block {
+.grid {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 24px 48px;
-  align-items: end;
-  background: var(--green);
-  color: var(--green-ink);
-  padding: clamp(22px, 2.6vw, 36px) clamp(20px, 3.4vw, 44px);
-  animation: wipe 760ms var(--ease-out) both;
-}
-@keyframes wipe {
-  from { clip-path: inset(0 100% 0 0); }
-  to { clip-path: inset(0 0 0 0); }
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
 }
 
-.title { display: flex; flex-direction: column; gap: 14px; }
+.title { display: flex; flex-direction: column; gap: 16px; animation: rise 560ms var(--ease-out) both; }
 .name {
-  font-size: clamp(44px, 6.6vw, 88px);
-  font-stretch: var(--wide);
+  font-size: clamp(56px, 8.2vw, 116px);
   font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 0.92;
+  letter-spacing: -0.04em;
+  line-height: 0.86;
 }
-.desc {
-  font-size: clamp(19px, 2vw, 26px);
-  font-weight: 500;
-  letter-spacing: -0.005em;
-  color: var(--green-ink);
-}
+.desc { font-size: clamp(22px, 2.2vw, 30px); font-weight: 700; letter-spacing: -0.015em; }
 
-.meta {
-  display: grid;
-  grid-template-columns: auto auto;
-  border-top: 1px solid var(--green-ink-2);
-  min-width: 300px;
-}
-.meta > div {
-  display: contents;
-}
-.meta dt, .meta dd {
-  padding: 6px 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--green-ink-2) 55%, transparent);
-  font-size: 15px;
-}
-.meta dt {
-  font-stretch: var(--narrow);
-  font-weight: 600;
-  color: var(--green-ink-2);
-  padding-right: 28px;
-}
-.meta dd { font-weight: 600; text-align: right; }
-
-.body {
-  margin-top: clamp(24px, 2.8vw, 40px);
-}
-
-.colHead {
-  font-size: 15px;
-  font-weight: 700;
-  font-stretch: var(--narrow);
-  letter-spacing: 0.01em;
-  padding-bottom: 10px;
-  margin-bottom: 18px;
-  border-bottom: 1px solid var(--rule-strong);
-}
-
-.features, .application {
-  animation: rise 520ms var(--ease-out) both;
-  animation-delay: 380ms;
-}
-.application { animation-delay: 460ms; }
-@keyframes rise {
-  from { opacity: 0; transform: translateY(10px); }
-}
-
-.list {
-  display: grid;
-  gap: 12px;
-  font-size: 18px;
+.lede {
+  margin-top: 20px;
+  font-size: 19px;
   line-height: 1.45;
-  max-width: 46ch;
+  font-weight: 500;
+  max-width: 40ch;
+  animation: rise 560ms var(--ease-out) 80ms both;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
+.actions { display: flex; flex-wrap: wrap; gap: 14px 16px; margin-top: 30px; padding-top: 10px; }
+
+.inventory { margin-top: 36px; padding: 18px 18px 22px; }
+.invHead { font-weight: 800; font-size: 16px; margin-bottom: 18px; }
+.bricks { display: flex; flex-wrap: wrap; gap: 20px 10px; }
+.bricks li { animation: settle 360ms var(--ease-out) both; }
+.part { --drop: 4px; padding: 6px 12px; font-size: 15px; min-height: 36px; }
+
+/* The dashed assembly arrow from the box to step 1. */
+.arrow {
+  position: absolute;
+  left: calc(41.6% - 24px);
+  top: 372px;
+  width: 120px;
+  height: 140px;
+  animation: rise 400ms var(--ease-out) 700ms both;
 }
 
+.step[data-state="dim"] .frame { box-shadow: none; border-color: var(--ghost-ink); }
+.step[data-state="dim"] img { filter: grayscale(1); opacity: 0.5; }
+.step[data-state="dim"] .callout :global(.brick) { --c: var(--ghost); --fg: var(--ghost-ink); --k: var(--ghost-ink); }
+.step[data-state="lit"] .frame { outline: 5px solid var(--yellow); outline-offset: 5px; }
+.step { position: relative; padding-left: clamp(36px, 4vw, 60px); animation: drop 620ms var(--ease-out) 220ms both; }
+.no {
+  position: absolute;
+  left: -14px;
+  top: -34px;
+  z-index: 2;
+  font-size: clamp(110px, 13vw, 190px);
+}
 .frame {
+  position: relative;
   display: block;
   overflow: hidden;
-  border: 1px solid var(--rule-strong);
+  border: var(--key) solid var(--ink);
+  border-radius: var(--r);
+  box-shadow: 0 8px 0 var(--ink);
+  aspect-ratio: 1600 / 910;
   background: var(--ink);
-  aspect-ratio: 1600 / 826;
 }
 .frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top left;
   transition: transform 300ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
-  .frame:hover img { transform: scale(1.02); }
+  .frame:hover img { transform: scale(1.025); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .block, .features, .application { animation: none; }
+.callout {
+  position: absolute;
+  right: -14px;
+  top: calc((100% - 0px) * 0);
+  margin-top: -22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px 14px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 5px 0 var(--ink);
 }
+.qty { font-weight: 800; font-size: 18px; }
+.piece { --drop: 3px; padding: 3px 10px; font-size: 15px; margin-top: 7px; }
 
+.caption { margin-top: 30px; }
+.stepTitle { font-size: var(--h3); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+.stepTitle span { color: var(--ink-3); }
+.caption p { font-size: 18px; line-height: 1.45; max-width: 52ch; margin-bottom: 8px; font-weight: 500; }
+
+/* Entrances move pieces into place; content stays visible throughout. */
+@keyframes rise { from { opacity: 0.4; transform: translateY(14px); } }
+@keyframes drop { from { opacity: 0.4; transform: translateY(-28px); } }
+@keyframes settle { from { transform: translateY(-10px); } }
+
+@media (max-width: 1100px) {
+  .arrow { display: none; }
+}
+/* Phones: name, then step 1, then the words, actions and the box of parts. */
 @media (max-width: 960px) {
-  .block { grid-template-columns: 1fr; }
-  .meta { min-width: 0; }
+  .grid { grid-template-columns: 1fr; gap: 0; }
+  .left { display: contents; }
+  .title { order: 1; }
+  .step { order: 2; margin-top: 56px; }
+  .lede { order: 3; margin-top: 32px; }
+  .actions { order: 4; }
+  .inventory { order: 5; }
 }
 @media (max-width: 520px) {
-  .actions .btn, .actions :global(.btn) { flex: 1 1 100%; }
+  .actions :global(.btn) { flex: 1 1 100%; }
+  .no { left: -6px; top: -26px; }
+  .callout { right: -6px; }
 }
 
-.frame:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
-
-/* Phones: compact meta, and the actions come before the feature list so the
-   main button sits on the first screen. */
-@media (max-width: 900px) {
-  .application { order: -1; }
-  .features { display: flex; flex-direction: column; }
-  .actions { order: -1; margin: 0 0 28px; }
-  .meta { grid-template-columns: 1fr 1fr; column-gap: 16px; border-top: 0; }
-  .meta > div { display: block; border-top: 1px solid var(--green-ink-2); padding: 6px 0; }
-  .meta dt, .meta dd { border: 0; padding: 0; text-align: left; font-size: 14px; }
+/* Phones: the numeral sits above the frame so the step text keeps the page margin. */
+@media (max-width: 960px) {
+  .step { padding-left: 0; }
+  .no { position: relative; display: block; left: -4px; top: 0; font-size: 104px; margin-bottom: -30px; }
+  .callout { right: -6px; margin-top: -18px; }
 }

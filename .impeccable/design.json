@@ -1,318 +1,387 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-23T14:54:38+00:00",
+  "generatedAt": "2026-11-23T15:29:40+00:00",
   "title": "Design System: jagetic.com",
   "extensions": {
     "colorMeta": {
-      "green": {
+      "sky": {
         "role": "primary",
-        "displayName": "Solder-Mask Green",
-        "canonical": "#0e6b45",
+        "displayName": "Instruction Sky",
+        "cssVar": "--sky",
+        "canonical": "#58b3ea",
+        "oklch": "oklch(73.3% 0.118 237.9)",
         "tonalRamp": [
-          "#153729",
-          "#1e694a",
-          "#21a06c",
-          "#1edd8f",
-          "#58dea7",
-          "#90e0bf",
-          "#c2e8d9",
-          "#eef7f3"
+          "#000d17",
+          "#02283d",
+          "#054768",
+          "#0b6896",
+          "#3a8bba",
+          "#73add2",
+          "#a7cfea",
+          "#dbf2ff"
         ]
       },
-      "green-deep": {
-        "role": "primary",
-        "displayName": "Deep Mask Green",
-        "canonical": "#0a5236",
+      "sky-light": {
+        "role": "secondary",
+        "displayName": "Light Blue Brick",
+        "cssVar": "--sky-light",
+        "canonical": "#9dd3f3",
+        "oklch": "oklch(84.1% 0.072 234.8)",
         "tonalRamp": [
-          "#15382a",
-          "#1e694c",
-          "#20a16f",
-          "#1cdf93",
-          "#57dfaa",
-          "#8fe1c1",
-          "#c2e9d9",
-          "#eef7f3"
+          "#040c12",
+          "#132833",
+          "#264658",
+          "#3a6780",
+          "#5b89a3",
+          "#87abc0",
+          "#b4cddd",
+          "#e3f1fa"
         ]
       },
-      "green-ink": {
-        "role": "primary",
-        "displayName": "Mask Ink",
-        "canonical": "#eef6f1",
-        "tonalRamp": [
-          "#1f2d25",
-          "#355240",
-          "#477a5a",
-          "#57a474",
-          "#80b694",
-          "#a8c8b4",
-          "#cdddd3",
-          "#f0f4f2"
-        ]
-      },
-      "green-ink-2": {
-        "role": "primary",
-        "displayName": "Mask Ink Dim",
-        "canonical": "#c9e4d5",
-        "tonalRamp": [
-          "#1f2e25",
-          "#335442",
-          "#457c5d",
-          "#54a779",
-          "#7eb898",
-          "#a7c9b6",
-          "#cdddd4",
-          "#f0f4f2"
-        ]
-      },
-      "green-tint": {
-        "role": "primary",
-        "displayName": "Mask Tint",
-        "canonical": "#dcebe2",
-        "tonalRamp": [
-          "#202c25",
-          "#365141",
-          "#4a775c",
-          "#5ca077",
-          "#83b396",
-          "#aac6b5",
-          "#cedcd4",
-          "#f1f4f2"
-        ]
-      },
-      "paper": {
+      "sky-deep": {
         "role": "neutral",
-        "displayName": "Cool Paper",
-        "canonical": "#f6f7f5",
+        "displayName": "Sky Deep (unused)",
+        "cssVar": "--sky-deep",
+        "canonical": "#3d9ad6",
+        "oklch": "oklch(65.8% 0.124 240.9)",
         "tonalRamp": [
-          "#262924",
-          "#43493e",
-          "#616a57",
-          "#7e8c70",
-          "#9ba591",
-          "#b8beb2",
-          "#d5d8d2",
-          "#f2f3f2"
+          "#000d18",
+          "#01283f",
+          "#04476b",
+          "#09689a",
+          "#398abf",
+          "#73acd6",
+          "#a7cfed",
+          "#dbf2ff"
         ]
       },
-      "paper-2": {
+      "page": {
         "role": "neutral",
-        "displayName": "Paper Shade",
-        "canonical": "#eceeea",
+        "displayName": "Page White",
+        "cssVar": "--page",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
         "tonalRamp": [
-          "#262924",
-          "#43483e",
-          "#616958",
-          "#7e8b71",
-          "#9ba492",
-          "#b8bdb2",
-          "#d5d8d2",
-          "#f2f3f2"
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
         ]
       },
       "ink": {
         "role": "neutral",
-        "displayName": "Carbon Ink",
-        "canonical": "#121412",
+        "displayName": "Ink",
+        "cssVar": "--ink",
+        "canonical": "#0d1014",
+        "oklch": "oklch(17.2% 0.010 255.7)",
         "tonalRamp": [
-          "#252725",
-          "#414641",
-          "#5c655c",
-          "#778477",
-          "#969f96",
-          "#b5bbb5",
-          "#d4d6d4",
-          "#f2f3f2"
+          "#0a0b0c",
+          "#242527",
+          "#404246",
+          "#5e6166",
+          "#7f8388",
+          "#a2a5a9",
+          "#c7c9cc",
+          "#edeef0"
         ]
       },
       "ink-2": {
         "role": "neutral",
-        "displayName": "Graphite",
-        "canonical": "#444a45",
+        "displayName": "Ink 2",
+        "cssVar": "--ink-2",
+        "canonical": "#2f3a45",
+        "oklch": "oklch(34.3% 0.024 248.5)",
         "tonalRamp": [
-          "#252726",
-          "#414542",
-          "#5d645e",
-          "#78837a",
-          "#979f98",
-          "#b6bab6",
-          "#d4d6d4",
-          "#f2f2f2"
+          "#090b0e",
+          "#21262b",
+          "#3b434b",
+          "#58636d",
+          "#79848f",
+          "#9da6af",
+          "#c3cad1",
+          "#ebeff3"
         ]
       },
       "ink-3": {
         "role": "neutral",
-        "displayName": "Pencil",
-        "canonical": "#5f665f",
+        "displayName": "Ink 3",
+        "cssVar": "--ink-3",
+        "canonical": "#4c5a68",
+        "oklch": "oklch(46.1% 0.029 248.5)",
         "tonalRamp": [
-          "#252725",
-          "#424542",
-          "#5e635e",
-          "#798279",
-          "#989e98",
-          "#b6bab6",
-          "#d4d6d4",
-          "#f2f2f2"
+          "#090b0e",
+          "#20262c",
+          "#3a434c",
+          "#566370",
+          "#778491",
+          "#9ca6b1",
+          "#c2cad2",
+          "#eaeff4"
         ]
       },
-      "rule": {
-        "role": "neutral",
-        "displayName": "Hairline",
-        "canonical": "rgba(18, 20, 18, 0.16)",
+      "brick-red": {
+        "role": "secondary",
+        "displayName": "Brick Red",
+        "cssVar": "--red",
+        "canonical": "#e2231a",
+        "oklch": "oklch(58.5% 0.223 29.1)",
         "tonalRamp": [
-          "#252725",
-          "#414641",
-          "#5c655c",
-          "#778477",
-          "#969f96",
-          "#b5bbb5",
-          "#d4d6d4",
-          "#f2f3f2"
-        ],
-        "note": "Carbon ink at 16% alpha; ramp shown for the base ink hue."
-      },
-      "rule-strong": {
-        "role": "neutral",
-        "displayName": "Strong Rule",
-        "canonical": "#121412",
-        "tonalRamp": [
-          "#252725",
-          "#414641",
-          "#5c655c",
-          "#778477",
-          "#969f96",
-          "#b5bbb5",
-          "#d4d6d4",
-          "#f2f3f2"
+          "#1f0000",
+          "#4d0101",
+          "#800202",
+          "#b80504",
+          "#e14032",
+          "#f67b6b",
+          "#ffaea1",
+          "#ffe0d7"
         ]
       },
-      "field": {
-        "role": "neutral",
-        "displayName": "Field White",
-        "canonical": "#ffffff",
+      "brick-yellow": {
+        "role": "primary",
+        "displayName": "Brick Yellow",
+        "cssVar": "--yellow",
+        "canonical": "#ffcd00",
+        "oklch": "oklch(86.7% 0.177 90.8)",
         "tonalRamp": [
-          "#262626",
-          "#434343",
-          "#616161",
-          "#7e7e7e",
-          "#9b9b9b",
-          "#b8b8b8",
-          "#d5d5d5",
-          "#f2f2f2"
+          "#130900",
+          "#352100",
+          "#5a3c00",
+          "#835900",
+          "#a67c00",
+          "#c2a23e",
+          "#dec888",
+          "#fbeeca"
+        ]
+      },
+      "ghost": {
+        "role": "neutral",
+        "displayName": "Ghost",
+        "cssVar": "--ghost",
+        "canonical": "#dde6ee",
+        "oklch": "oklch(92.0% 0.015 244.7)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#222528",
+          "#3e4347",
+          "#5b6268",
+          "#7c838a",
+          "#a0a6ab",
+          "#c5cacd",
+          "#eceff1"
+        ]
+      },
+      "ghost-ink": {
+        "role": "neutral",
+        "displayName": "Ghost Ink",
+        "cssVar": "--ghost-ink",
+        "canonical": "#4f5d6b",
+        "oklch": "oklch(47.2% 0.029 248.4)",
+        "tonalRamp": [
+          "#090b0e",
+          "#20262c",
+          "#3a434c",
+          "#56636f",
+          "#778491",
+          "#9ca6b1",
+          "#c2cad2",
+          "#ebeff4"
         ]
       },
       "error": {
         "role": "error",
-        "displayName": "Fault Red",
-        "canonical": "#a3261b",
+        "displayName": "Error Red",
+        "cssVar": "--error",
+        "canonical": "#b3150e",
+        "oklch": "oklch(48.9% 0.190 29.2)",
         "tonalRamp": [
-          "#361916",
-          "#662621",
-          "#9c2f26",
-          "#d73324",
-          "#d9665c",
-          "#dd9993",
-          "#e7c6c3",
-          "#f6efee"
+          "#1c0201",
+          "#480b07",
+          "#781912",
+          "#ad291f",
+          "#d55042",
+          "#eb8374",
+          "#ffb3a7",
+          "#ffe2db"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The name in the title block only. Archivo 800 at width 125%."
+        "purpose": "The name in the hero, on two lines."
+      },
+      "numeral": {
+        "displayName": "Step Numeral",
+        "purpose": "Outlined white step numbers (3px ink stroke, paint-order stroke fill); hero numeral up to 190px, readout count 88px."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section h2s on the section's top rule. Archivo 700 at width 125%."
+        "purpose": "Section heads, paired with a 19px/500 intro."
+      },
+      "title-step": {
+        "displayName": "Step Title",
+        "purpose": "Build-step project names and the alternate-builds heading."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Project, employer and sub-table heads (--h3). Width 125%."
+        "purpose": "Hero step caption, alternate-build names, history company names, sent-form heading."
       },
-      "lead": {
-        "displayName": "Lead",
-        "purpose": "Feature lists, section intros and project summaries, 44–52ch."
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Hero sub-line and section intros, max 40-44ch."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Default reading text with tabular numerals."
-      },
-      "table": {
-        "displayName": "Table",
-        "purpose": "Table cells, spec rows and revision changes."
+        "purpose": "Base text and inputs; tabular numerals throughout."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Table heads, spec keys, form labels. Condensed (width 78%), sentence case, never all caps."
+        "purpose": "Form labels, contact terms, list headings; heavy sentence case."
+      },
+      "brick-label": {
+        "displayName": "Brick Label",
+        "purpose": "Text on part bricks."
       }
+    },
+    "fontFiles": [
+      {
+        "family": "Bricolage Grotesque",
+        "src": "/fonts/bricolage-latin.woff2",
+        "weight": "200 800",
+        "stretch": "75% 100%"
+      },
+      {
+        "family": "Bricolage Grotesque",
+        "src": "/fonts/bricolage-latin-ext.woff2",
+        "weight": "200 800",
+        "stretch": "75% 100%"
+      }
+    ],
+    "background": {
+      "name": "stud-grid",
+      "value": "background-color: var(--sky); background-image: radial-gradient(circle, rgba(255,255,255,0.32) 2.4px, transparent 2.8px); background-size: 28px 28px; background-position: 14px 14px;",
+      "purpose": "The instruction-page ground behind everything."
     },
     "shadows": [
       {
-        "name": "overlay",
-        "value": "0 24px 48px -12px rgba(18,20,18,.35), 0 2px 6px rgba(18,20,18,.12)",
-        "purpose": "Command palette only, above a rgba(18,20,18,.32) scrim. Nothing on the page casts a shadow."
+        "name": "brick-drop",
+        "value": "0 var(--drop) 0 var(--ink)",
+        "purpose": "Every brick; --drop is 5px by default, 3-4px on small bricks, 6px on history blocks."
+      },
+      {
+        "name": "brick-hover",
+        "value": "0 calc(var(--drop) + 2px) 0 var(--ink)",
+        "purpose": "Interactive brick on fine-pointer hover, with translateY(-2px)."
+      },
+      {
+        "name": "brick-pressed",
+        "value": "0 0 0 var(--ink)",
+        "purpose": "Pressed or aria-pressed brick, with translateY(var(--drop))."
+      },
+      {
+        "name": "page-drop",
+        "value": "0 8px 0 var(--ink)",
+        "purpose": "Build-step pages, alternate builds, hero frame, parts and contact panels."
+      },
+      {
+        "name": "card-drop",
+        "value": "0 6px 0 var(--ink)",
+        "purpose": "History cards."
+      },
+      {
+        "name": "callout-drop",
+        "value": "0 5px 0 var(--ink)",
+        "purpose": "Hero call-out and toast."
+      },
+      {
+        "name": "overlay-drop",
+        "value": "0 10px 0 var(--ink)",
+        "purpose": "Command palette and easter-egg message."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 3px solid var(--ink); outline-offset: 3px",
+        "purpose": "Global :focus-visible."
+      },
+      {
+        "name": "input-focus",
+        "value": "0 0 0 4px var(--yellow)",
+        "purpose": "Input focus halo in place of the outline."
+      },
+      {
+        "name": "lit-outline",
+        "value": "outline: 5px solid var(--yellow); outline-offset: 5px",
+        "purpose": "Steps and alternate builds that use the chosen part (plus translateY(-4px))."
       }
     ],
     "motion": [
       {
         "name": "ease-out",
         "value": "cubic-bezier(0.23, 1, 0.32, 1)",
-        "purpose": "Default easing for entrances, presses, image zoom and the link draw."
-      },
-      {
-        "name": "ease-in-out",
-        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
-        "purpose": "Defined for on-screen movement; currently unused by the home page."
-      },
-      {
-        "name": "title-wipe",
-        "value": "clip-path inset(0 100% 0 0) → inset(0), 760ms ease-out, once",
-        "purpose": "Title-block entrance."
-      },
-      {
-        "name": "content-rise",
-        "value": "opacity 0 + translateY(10px) → rest, 520ms ease-out, delays 380ms / 460ms",
-        "purpose": "Hero feature column then screenshot column follow the wipe."
-      },
-      {
-        "name": "image-zoom",
-        "value": "transform scale(1.02), 300ms ease-out",
-        "purpose": "Screenshot hover inside its flat frame; frames never lift."
+        "purpose": "The one easing for presses, entrances and lit/dim lifts."
       },
       {
         "name": "press",
-        "value": "transform scale(0.97), 160ms ease-out",
-        "purpose": "Buttons, copy, search and menu triggers on :active."
+        "value": "120ms ease-out (transform, box-shadow)",
+        "purpose": "Brick hover lift and click-down."
       },
       {
-        "name": "state-color",
-        "value": "140–160ms ease",
-        "purpose": "Colour, border and background changes on hover and active state (pins, ratings, links, rows)."
+        "name": "rise",
+        "value": "560ms ease-out, from opacity 0.4 translateY(14px)",
+        "purpose": "Hero name; sub-line at 80ms delay; arrow 400ms at 700ms delay."
       },
       {
-        "name": "link-draw",
-        "value": "background-size 0% → 100% 1px, 360ms ease-out",
-        "purpose": "Text-link underline redraws from the left on hover."
+        "name": "drop",
+        "value": "620ms ease-out 220ms, from opacity 0.4 translateY(-28px)",
+        "purpose": "Step 1 drops in along its arrow."
       },
       {
-        "name": "sheet-stagger",
-        "value": "rise 260ms ease-out, delays 0/30/55/75ms",
-        "purpose": "Mobile nav sheet rows."
+        "name": "settle",
+        "value": "360ms ease-out, from translateY(-10px); delays 420ms + 0/40/70/120/150/200/220/270/300/340ms",
+        "purpose": "Inventory bricks settle on a non-uniform stagger."
       },
       {
-        "name": "palette",
-        "value": "none",
-        "purpose": "The command palette opens and closes without animation by design; only its toast fades (200ms)."
+        "name": "lit-dim",
+        "value": "200ms (box-shadow, border-color ease; transform ease-out; filter/opacity ease)",
+        "purpose": "Steps lighting or ghosting when a part is chosen."
+      },
+      {
+        "name": "fill",
+        "value": "140ms ease (background-color, box-shadow)",
+        "purpose": "Link and nav-link yellow fill, input halo."
+      },
+      {
+        "name": "image-zoom",
+        "value": "300ms ease-out, scale(1.025)",
+        "purpose": "Screenshot inside its frame on hover."
+      },
+      {
+        "name": "toast",
+        "value": "200ms, from opacity 0 translateY(8px)",
+        "purpose": "Command-palette confirmation toast."
+      },
+      {
+        "name": "egg",
+        "value": "fade 200ms ease; pop 280ms ease-out from scale(0.96); burst 1.2s ease-out",
+        "purpose": "Easter egg overlay, message and brick particles."
       },
       {
         "name": "reduced-motion",
-        "value": "prefers-reduced-motion: reduce",
-        "purpose": "Title wipe, content rise, sheet stagger, easter-egg particles and pop are removed; the toast keeps only its fade."
+        "value": "transition-duration: 0ms; animation: none",
+        "purpose": "prefers-reduced-motion shows everything at rest."
       }
     ],
     "breakpoints": [
       {
         "name": "phone-sm",
+        "value": "420px"
+      },
+      {
+        "name": "nav-mark",
         "value": "440px"
       },
       {
@@ -320,28 +389,40 @@
         "value": "520px"
       },
       {
-        "name": "phone-lg",
-        "value": "600px"
+        "name": "form-pair",
+        "value": "560px"
       },
       {
-        "name": "table-stack",
-        "value": "720px"
+        "name": "history-1col",
+        "value": "620px"
       },
       {
-        "name": "nav-collapse",
+        "name": "alt-stack",
+        "value": "640px"
+      },
+      {
+        "name": "section-head",
+        "value": "820px"
+      },
+      {
+        "name": "nav-menu",
         "value": "860px"
       },
       {
-        "name": "split-stack",
+        "name": "grids",
         "value": "900px"
       },
       {
-        "name": "revision-stack",
+        "name": "hero-stack",
         "value": "960px"
       },
       {
-        "name": "nav-tight",
-        "value": "1080px"
+        "name": "history-2col",
+        "value": "1000px"
+      },
+      {
+        "name": "hero-arrow",
+        "value": "1100px"
       }
     ]
   },
@@ -350,149 +431,139 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Main action (Email Marko, Send). Ink fill, green on hover, presses to 0.97.",
-      "html": "<button class=\"ds-btn ds-btn-primary\">Email Marko</button>",
-      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-btn{font-family:var(--font);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;font-weight:600;font-size:16px;border:1px solid var(--ink);border-radius:0;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,transform 160ms var(--ease-out);} .ds-btn:active{transform:scale(.97);} .ds-btn:focus-visible{outline:2px solid var(--green);outline-offset:3px;} .ds-btn-primary{background:var(--ink);color:var(--paper);} .ds-btn-primary:hover{background:var(--green);border-color:var(--green);}"
+      "description": "Yellow brick, 52px: the main action (Email Marko, Send email).",
+      "html": "<a class=\"ds-brick ds-btn\" href=\"#\">Email Marko</a>",
+      "css": ":host{--sky:#58b3ea;--sky-light:#9dd3f3;--page:#fff;--ink:#0d1014;--ink-2:#2f3a45;--ink-3:#4c5a68;--red:#e2231a;--yellow:#ffcd00;--ghost:#dde6ee;--ghost-ink:#4f5d6b;--error:#b3150e;--key:3px;--drop:5px;--r:10px;--r-brick:6px;--ease-out:cubic-bezier(0.23,1,0.32,1);font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;}.ds-brick{--c:var(--yellow);--fg:var(--ink);--k:var(--ink);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--c);color:var(--fg);border:var(--key) solid var(--k);border-radius:var(--r-brick);box-shadow:0 var(--drop) 0 var(--k);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;transition:transform 120ms var(--ease-out),box-shadow 120ms var(--ease-out);}.ds-brick::before{content:'';position:absolute;left:9px;right:9px;top:calc(-1 * var(--key) - 7px);height:7px;background:linear-gradient(var(--k),var(--k)) left top / 16px var(--key),linear-gradient(90deg,var(--k) 0 var(--key),var(--c) var(--key) calc(16px - var(--key)),var(--k) calc(16px - var(--key)) 16px) left top / 16px 100%;background-repeat:space no-repeat;pointer-events:none;}.ds-brick:hover{transform:translateY(-2px);box-shadow:0 calc(var(--drop) + 2px) 0 var(--k);}.ds-brick:active,.ds-brick[aria-pressed='true']{transform:translateY(var(--drop));box-shadow:0 0 0 var(--k);}.ds-brick:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-btn{min-height:52px;padding:0 24px;font-size:17px;}"
     },
     {
-      "name": "Ghost Button",
+      "name": "Secondary Button",
       "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "Secondary action (LinkedIn). Ink outline, inverts to ink on hover.",
-      "html": "<button class=\"ds-btn ds-btn-ghost\">LinkedIn</button>",
-      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-btn{font-family:var(--font);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;font-weight:600;font-size:16px;border:1px solid var(--ink);border-radius:0;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,transform 160ms var(--ease-out);} .ds-btn:active{transform:scale(.97);} .ds-btn:focus-visible{outline:2px solid var(--green);outline-offset:3px;} .ds-btn-ghost{background:transparent;color:var(--ink);} .ds-btn-ghost:hover{background:var(--ink);color:var(--paper);}"
+      "refersTo": "button-secondary",
+      "description": "White brick, 52px: the second action (LinkedIn, Write another).",
+      "html": "<a class=\"ds-brick ds-white ds-btn\" href=\"#\">LinkedIn</a>",
+      "css": ":host{--sky:#58b3ea;--sky-light:#9dd3f3;--page:#fff;--ink:#0d1014;--ink-2:#2f3a45;--ink-3:#4c5a68;--red:#e2231a;--yellow:#ffcd00;--ghost:#dde6ee;--ghost-ink:#4f5d6b;--error:#b3150e;--key:3px;--drop:5px;--r:10px;--r-brick:6px;--ease-out:cubic-bezier(0.23,1,0.32,1);font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;}.ds-brick{--c:var(--yellow);--fg:var(--ink);--k:var(--ink);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--c);color:var(--fg);border:var(--key) solid var(--k);border-radius:var(--r-brick);box-shadow:0 var(--drop) 0 var(--k);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;transition:transform 120ms var(--ease-out),box-shadow 120ms var(--ease-out);}.ds-brick::before{content:'';position:absolute;left:9px;right:9px;top:calc(-1 * var(--key) - 7px);height:7px;background:linear-gradient(var(--k),var(--k)) left top / 16px var(--key),linear-gradient(90deg,var(--k) 0 var(--key),var(--c) var(--key) calc(16px - var(--key)),var(--k) calc(16px - var(--key)) 16px) left top / 16px 100%;background-repeat:space no-repeat;pointer-events:none;}.ds-brick:hover{transform:translateY(-2px);box-shadow:0 calc(var(--drop) + 2px) 0 var(--k);}.ds-brick:active,.ds-brick[aria-pressed='true']{transform:translateY(var(--drop));box-shadow:0 0 0 var(--k);}.ds-brick:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-white{--c:var(--page);}.ds-btn{min-height:52px;padding:0 24px;font-size:17px;}"
     },
     {
-      "name": "Text Link",
-      "kind": "custom",
-      "refersTo": "link",
-      "description": "Inline link; underline redraws from the left and text turns green on hover.",
-      "html": "<p class=\"ds-p\">Live at <a class=\"ds-link\" href=\"#\">proarda.com</a></p>",
-      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-p{font-family:var(--font);font-size:17px;color:var(--ink);} .ds-link{color:inherit;text-decoration:none;font-weight:600;background-image:linear-gradient(currentColor,currentColor);background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:1px;transition:color 160ms ease;} .ds-link:hover{color:var(--green);animation:ds-draw 360ms var(--ease-out);} .ds-link:focus-visible{background-color:var(--green-tint);outline:2px solid var(--green);outline-offset:2px;} @keyframes ds-draw{from{background-size:0% 1px;}to{background-size:100% 1px;}}"
+      "name": "Part Bricks",
+      "kind": "chip",
+      "refersTo": "brick-yellow",
+      "description": "Stack parts, one colour per part; ghost marks a part already used in an earlier step.",
+      "html": "<ul class=\"ds-row\"><li><span class=\"ds-brick ds-part ds-blue\">React</span></li><li><span class=\"ds-brick ds-part ds-red\">TypeScript</span></li><li><span class=\"ds-brick ds-part\">Node.js</span></li><li><span class=\"ds-brick ds-part ds-white\">GraphQL</span></li><li><span class=\"ds-brick ds-part ds-ghost\">PostgreSQL</span></li></ul>",
+      "css": ":host{--sky:#58b3ea;--sky-light:#9dd3f3;--page:#fff;--ink:#0d1014;--ink-2:#2f3a45;--ink-3:#4c5a68;--red:#e2231a;--yellow:#ffcd00;--ghost:#dde6ee;--ghost-ink:#4f5d6b;--error:#b3150e;--key:3px;--drop:5px;--r:10px;--r-brick:6px;--ease-out:cubic-bezier(0.23,1,0.32,1);font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;}.ds-brick{--c:var(--yellow);--fg:var(--ink);--k:var(--ink);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--c);color:var(--fg);border:var(--key) solid var(--k);border-radius:var(--r-brick);box-shadow:0 var(--drop) 0 var(--k);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;transition:transform 120ms var(--ease-out),box-shadow 120ms var(--ease-out);}.ds-brick::before{content:'';position:absolute;left:9px;right:9px;top:calc(-1 * var(--key) - 7px);height:7px;background:linear-gradient(var(--k),var(--k)) left top / 16px var(--key),linear-gradient(90deg,var(--k) 0 var(--key),var(--c) var(--key) calc(16px - var(--key)),var(--k) calc(16px - var(--key)) 16px) left top / 16px 100%;background-repeat:space no-repeat;pointer-events:none;}.ds-brick:hover{transform:translateY(-2px);box-shadow:0 calc(var(--drop) + 2px) 0 var(--k);}.ds-brick:active,.ds-brick[aria-pressed='true']{transform:translateY(var(--drop));box-shadow:0 0 0 var(--k);}.ds-brick:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-row{display:flex;flex-wrap:wrap;gap:20px 10px;list-style:none;margin:0;padding:12px 0 0;}.ds-part{--drop:4px;padding:6px 12px;font-size:15px;min-height:36px;cursor:default;}.ds-red{--c:var(--red);--fg:#fff;}.ds-blue{--c:var(--sky-light);}.ds-white{--c:var(--page);}.ds-ghost{--c:var(--ghost);--fg:var(--ghost-ink);--k:var(--ghost-ink);}"
     },
     {
-      "name": "Spec Table",
-      "kind": "custom",
-      "refersTo": "spec-table-row",
-      "description": "The core component: condensed label / value rows on hairline rules under an ink top rule.",
-      "html": "<dl class=\"ds-spec\"><div class=\"ds-row\"><dt class=\"ds-label\">Role</dt><dd>Full-stack engineer</dd></div><div class=\"ds-row\"><dt class=\"ds-label\">Stack</dt><dd>NestJS, React, Postgres, Yjs</dd></div><div class=\"ds-row\"><dt class=\"ds-label\">Status</dt><dd>Live, self-hosted</dd></div></dl>",
-      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-spec{font-family:var(--font);margin:0;border-top:1px solid var(--rule-strong);color:var(--ink);font-variant-numeric:tabular-nums;} .ds-row{display:grid;grid-template-columns:112px minmax(0,1fr);gap:16px;padding:10px 0;border-bottom:1px solid var(--rule);font-size:16px;line-height:1.4;} .ds-row dd{margin:0;} .ds-label{font-stretch:78%;font-weight:600;font-size:14px;letter-spacing:.01em;color:var(--ink-3);padding-top:2px;}"
-    },
-    {
-      "name": "Title Block",
+      "name": "Panel",
       "kind": "card",
-      "refersTo": "title-block",
-      "description": "The one green field: expanded display name, description, document meta. Wipes in once.",
-      "html": "<header class=\"ds-tb\"><div><h1 class=\"ds-tb-name\">Marko Jagetić</h1><p class=\"ds-tb-desc\">Full-stack engineer in Zagreb</p></div><dl class=\"ds-tb-meta\"><dt>Document</dt><dd>MJ-01</dd><dt>Revision</dt><dd>2026-11</dd></dl></header>",
-      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-tb{font-family:var(--font);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end;background:var(--green);color:var(--green-ink);padding:28px 32px;animation:ds-wipe 760ms var(--ease-out) both;} .ds-tb-name{margin:0;font-size:56px;font-stretch:125%;font-weight:800;letter-spacing:-.035em;line-height:.92;} .ds-tb-desc{margin:14px 0 0;font-size:20px;font-weight:500;} .ds-tb-meta{display:grid;grid-template-columns:auto auto;margin:0;border-top:1px solid var(--green-ink-2);font-size:15px;font-variant-numeric:tabular-nums;} .ds-tb-meta dt,.ds-tb-meta dd{margin:0;padding:6px 0;border-bottom:1px solid color-mix(in srgb,var(--green-ink-2) 55%,transparent);font-weight:600;} .ds-tb-meta dt{font-stretch:78%;color:var(--green-ink-2);padding-right:28px;} .ds-tb-meta dd{text-align:right;} @keyframes ds-wipe{from{clip-path:inset(0 100% 0 0);}to{clip-path:inset(0);}} @media (prefers-reduced-motion:reduce){.ds-tb{animation:none;}}"
+      "refersTo": "panel",
+      "description": "White instruction page with a 3px keyline and the 8px page drop.",
+      "html": "<div class=\"ds-panel\"><p class=\"ds-label\">Parts used</p><p class=\"ds-text\">Docs, canvas and Kanban boards, edited live together.</p></div>",
+      "css": ":host{--sky:#58b3ea;--sky-light:#9dd3f3;--page:#fff;--ink:#0d1014;--ink-2:#2f3a45;--ink-3:#4c5a68;--red:#e2231a;--yellow:#ffcd00;--ghost:#dde6ee;--ghost-ink:#4f5d6b;--error:#b3150e;--key:3px;--drop:5px;--r:10px;--r-brick:6px;--ease-out:cubic-bezier(0.23,1,0.32,1);font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;}.ds-panel{background:var(--page);color:var(--ink);border:var(--key) solid var(--ink);border-radius:var(--r);box-shadow:0 8px 0 var(--ink);padding:22px;max-width:360px;}.ds-label{font-weight:800;font-size:16px;margin:0 0 10px;}.ds-text{font-size:17px;line-height:1.5;margin:0;}"
     },
     {
-      "name": "Image Frame",
-      "kind": "card",
-      "refersTo": "frame",
-      "description": "Screenshot in a flat 1px ink frame; the image zooms 1.02 inside on hover, nothing lifts.",
-      "html": "<a class=\"ds-frame\" href=\"#\"><div class=\"ds-shot\"></div></a>",
-      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-frame{display:block;width:320px;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--rule-strong);background:var(--paper-2);} .ds-shot{width:100%;height:100%;background:linear-gradient(var(--ink),var(--ink)) 0 0/100% 14% no-repeat,repeating-linear-gradient(var(--paper) 0 18px,var(--paper-2) 18px 20px);transition:transform 300ms var(--ease-out);} .ds-frame:hover .ds-shot{transform:scale(1.02);} .ds-frame:focus-visible{outline:3px solid var(--green);outline-offset:4px;}"
-    },
-    {
-      "name": "Text Field",
+      "name": "Text Input",
       "kind": "input",
       "refersTo": "input",
-      "description": "Square field, white fill, ink baseline; green border and ring on focus.",
+      "description": "Keylined white field; focus is a 4px yellow halo, invalid turns the border red.",
       "html": "<label class=\"ds-field\"><span class=\"ds-label\">Your email</span><input class=\"ds-input\" placeholder=\"you@example.com\"></label>",
-      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-field{font-family:var(--font);display:grid;gap:8px;width:320px;} .ds-label{font-stretch:78%;font-weight:600;font-size:14px;letter-spacing:.01em;color:var(--ink-3);} .ds-input{font-family:var(--font);min-height:48px;padding:12px 14px;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--rule);border-bottom-color:var(--ink);border-radius:0;caret-color:var(--green);transition:border-color 160ms ease,box-shadow 160ms ease;} .ds-input:hover{border-color:var(--ink-3);border-bottom-color:var(--ink);} .ds-input:focus-visible{outline:none;border-color:var(--green);box-shadow:0 0 0 1px var(--green);} .ds-input[aria-invalid=true]{border-color:#a3261b;}"
+      "css": ":host{--sky:#58b3ea;--sky-light:#9dd3f3;--page:#fff;--ink:#0d1014;--ink-2:#2f3a45;--ink-3:#4c5a68;--red:#e2231a;--yellow:#ffcd00;--ghost:#dde6ee;--ghost-ink:#4f5d6b;--error:#b3150e;--key:3px;--drop:5px;--r:10px;--r-brick:6px;--ease-out:cubic-bezier(0.23,1,0.32,1);font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;}.ds-field{display:grid;gap:8px;max-width:360px;}.ds-label{font-weight:800;font-size:15px;}.ds-input{width:100%;box-sizing:border-box;min-height:52px;padding:12px 14px;font:inherit;font-size:17px;color:var(--ink);background:var(--page);border:var(--key) solid var(--ink);border-radius:8px;caret-color:var(--red);transition:box-shadow 140ms ease;}.ds-input:focus-visible{outline:none;box-shadow:0 0 0 4px var(--yellow);}.ds-input[aria-invalid='true']{border-color:var(--error);}"
     },
     {
       "name": "Navigation",
       "kind": "nav",
-      "refersTo": "nav-link",
-      "description": "Fixed translucent paper bar: monogram chip, graphite links that turn green, search trigger with keycap, compact CTA.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-mark\" href=\"#\"><span class=\"ds-chip\">MJ</span>Marko Jagetić</a><div class=\"ds-links\"><a class=\"ds-navlink\" href=\"#\">Applications</a><a class=\"ds-navlink\" href=\"#\">History</a><a class=\"ds-navlink\" href=\"#\">Characteristics</a></div><button class=\"ds-search\">Search <kbd class=\"ds-kbd\">⌘K</kbd></button></nav>",
-      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-nav{font-family:var(--font);display:flex;align-items:center;gap:24px;height:56px;padding:0 16px;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--rule-strong);color:var(--ink);} .ds-mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font-weight:700;font-stretch:78%;font-size:17px;} .ds-chip{display:inline-grid;place-items:center;width:30px;height:22px;background:var(--ink);color:var(--paper);font-size:12px;font-weight:700;font-stretch:125%;} .ds-links{display:flex;gap:4px;margin-left:auto;} .ds-navlink{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;text-decoration:none;font-size:15px;font-weight:500;color:var(--ink-2);transition:color 160ms ease;} .ds-navlink:hover{color:var(--green);} .ds-navlink:focus-visible,.ds-search:focus-visible{outline:2px solid var(--green);outline-offset:3px;} .ds-search{font-family:var(--font);display:inline-flex;align-items:center;gap:10px;min-height:36px;padding:0 6px 0 12px;background:none;border:1px solid var(--rule);font-size:14px;font-weight:500;color:var(--ink-2);cursor:pointer;transition:border-color 160ms ease,color 160ms ease,transform 160ms var(--ease-out);} .ds-search:hover{border-color:var(--ink);color:var(--ink);} .ds-search:active{transform:scale(.97);} .ds-kbd{font-family:inherit;font-stretch:78%;font-size:12px;font-weight:600;padding:2px 6px;background:var(--paper-2);border:1px solid var(--rule);}"
+      "refersTo": "nav",
+      "description": "White 68px bar with an ink rule, red MJ chip, yellow-fill text links and the yellow email brick.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-mark\" href=\"#\"><span class=\"ds-brick ds-chip\">MJ</span>Marko Jagetić</a><span class=\"ds-links\"><a class=\"ds-navlink\" href=\"#\">Steps</a><a class=\"ds-navlink\" href=\"#\">History</a><a class=\"ds-navlink\" href=\"#\">Parts</a></span><a class=\"ds-brick ds-cta\" href=\"#\">Email Marko</a></nav>",
+      "css": ":host{--sky:#58b3ea;--sky-light:#9dd3f3;--page:#fff;--ink:#0d1014;--ink-2:#2f3a45;--ink-3:#4c5a68;--red:#e2231a;--yellow:#ffcd00;--ghost:#dde6ee;--ghost-ink:#4f5d6b;--error:#b3150e;--key:3px;--drop:5px;--r:10px;--r-brick:6px;--ease-out:cubic-bezier(0.23,1,0.32,1);font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;}.ds-brick{--c:var(--yellow);--fg:var(--ink);--k:var(--ink);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--c);color:var(--fg);border:var(--key) solid var(--k);border-radius:var(--r-brick);box-shadow:0 var(--drop) 0 var(--k);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;transition:transform 120ms var(--ease-out),box-shadow 120ms var(--ease-out);}.ds-brick::before{content:'';position:absolute;left:9px;right:9px;top:calc(-1 * var(--key) - 7px);height:7px;background:linear-gradient(var(--k),var(--k)) left top / 16px var(--key),linear-gradient(90deg,var(--k) 0 var(--key),var(--c) var(--key) calc(16px - var(--key)),var(--k) calc(16px - var(--key)) 16px) left top / 16px 100%;background-repeat:space no-repeat;pointer-events:none;}.ds-brick:hover{transform:translateY(-2px);box-shadow:0 calc(var(--drop) + 2px) 0 var(--k);}.ds-brick:active,.ds-brick[aria-pressed='true']{transform:translateY(var(--drop));box-shadow:0 0 0 var(--k);}.ds-brick:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-nav{display:flex;align-items:center;gap:20px;height:68px;padding:0 20px;background:var(--page);border-bottom:var(--key) solid var(--ink);}.ds-mark{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:19px;color:var(--ink);text-decoration:none;padding-top:6px;}.ds-chip{--c:var(--red);--fg:#fff;--drop:3px;min-width:52px;height:30px;padding:0 8px;font-size:14px;font-weight:800;}.ds-links{display:flex;gap:4px;margin-left:auto;}.ds-navlink{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:var(--ink);text-decoration:none;font-size:17px;font-weight:600;border-radius:6px;transition:background-color 140ms ease;}.ds-navlink:hover,.ds-navlink:focus-visible{background:var(--yellow);}.ds-cta{--drop:4px;min-height:44px;padding:0 18px;font-size:16px;}"
     },
     {
-      "name": "Revision Row",
+      "name": "Inline Link",
       "kind": "custom",
-      "refersTo": "revision",
-      "description": "Career as a revision table; the current revision's letter box is green.",
-      "html": "<div class=\"ds-rev\" data-current><span class=\"ds-letter\">D</span><span class=\"ds-dates\">Mar 2026 – now</span><div><h3 class=\"ds-who\">Njuškalo</h3><p class=\"ds-role\">Software Engineer</p></div></div>",
-      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-rev{font-family:var(--font);display:grid;grid-template-columns:56px 160px minmax(0,1fr);gap:24px;padding:22px 0;border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule);color:var(--ink);font-variant-numeric:tabular-nums;} .ds-letter{display:inline-grid;place-items:center;width:32px;height:32px;border:1px solid var(--ink);font-weight:700;font-stretch:125%;} .ds-rev[data-current] .ds-letter{background:var(--green);border-color:var(--green);color:var(--green-ink);} .ds-dates{font-weight:600;font-stretch:78%;font-size:16px;padding-top:4px;} .ds-who{margin:0 0 4px;font-size:24px;font-stretch:125%;letter-spacing:-.01em;line-height:1.1;} .ds-role{margin:0;font-size:16px;color:var(--ink-2);}"
+      "refersTo": null,
+      "description": "Bold text with a 2px underline that fills yellow on hover and focus.",
+      "html": "<p class=\"ds-p\">Live at <a class=\"ds-link\" href=\"#\">proarda.com</a></p>",
+      "css": ":host{--sky:#58b3ea;--sky-light:#9dd3f3;--page:#fff;--ink:#0d1014;--ink-2:#2f3a45;--ink-3:#4c5a68;--red:#e2231a;--yellow:#ffcd00;--ghost:#dde6ee;--ghost-ink:#4f5d6b;--error:#b3150e;--key:3px;--drop:5px;--r:10px;--r-brick:6px;--ease-out:cubic-bezier(0.23,1,0.32,1);font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;}.ds-p{font-size:17px;color:var(--ink);}.ds-link{color:inherit;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;border-radius:3px;transition:background-color 140ms ease;}.ds-link:hover,.ds-link:focus-visible{background:var(--yellow);outline:none;}"
+    },
+    {
+      "name": "Build Step",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Booklet page with an outlined step numeral, new parts bright and used parts ghosted; lit gets a yellow outline.",
+      "html": "<article class=\"ds-step\" data-state=\"lit\"><span class=\"ds-no\">2</span><h3 class=\"ds-title\">Njuškalo</h3><p class=\"ds-role\">Software Engineer</p><p class=\"ds-ph\">Parts for this step</p><ul class=\"ds-row\"><li><span class=\"ds-brick ds-part\">Vue.js</span></li><li><span class=\"ds-brick ds-part ds-ghost\">TypeScript</span></li></ul></article>",
+      "css": ":host{--sky:#58b3ea;--sky-light:#9dd3f3;--page:#fff;--ink:#0d1014;--ink-2:#2f3a45;--ink-3:#4c5a68;--red:#e2231a;--yellow:#ffcd00;--ghost:#dde6ee;--ghost-ink:#4f5d6b;--error:#b3150e;--key:3px;--drop:5px;--r:10px;--r-brick:6px;--ease-out:cubic-bezier(0.23,1,0.32,1);font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;}.ds-brick{--c:var(--yellow);--fg:var(--ink);--k:var(--ink);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--c);color:var(--fg);border:var(--key) solid var(--k);border-radius:var(--r-brick);box-shadow:0 var(--drop) 0 var(--k);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;transition:transform 120ms var(--ease-out),box-shadow 120ms var(--ease-out);}.ds-brick::before{content:'';position:absolute;left:9px;right:9px;top:calc(-1 * var(--key) - 7px);height:7px;background:linear-gradient(var(--k),var(--k)) left top / 16px var(--key),linear-gradient(90deg,var(--k) 0 var(--key),var(--c) var(--key) calc(16px - var(--key)),var(--k) calc(16px - var(--key)) 16px) left top / 16px 100%;background-repeat:space no-repeat;pointer-events:none;}.ds-brick:hover{transform:translateY(-2px);box-shadow:0 calc(var(--drop) + 2px) 0 var(--k);}.ds-brick:active,.ds-brick[aria-pressed='true']{transform:translateY(var(--drop));box-shadow:0 0 0 var(--k);}.ds-brick:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-step{background:var(--page);color:var(--ink);border:var(--key) solid var(--ink);border-radius:var(--r);box-shadow:0 8px 0 var(--ink);padding:28px;max-width:420px;}.ds-step[data-state='lit']{outline:5px solid var(--yellow);outline-offset:5px;transform:translateY(-4px);}.ds-no{display:block;font-size:110px;font-weight:800;line-height:0.8;letter-spacing:-0.04em;color:var(--page);-webkit-text-stroke:var(--key) var(--ink);paint-order:stroke fill;margin:-8px 0 12px -6px;}.ds-title{font-size:40px;font-weight:800;letter-spacing:-0.035em;line-height:1;margin:0;}.ds-role{margin:8px 0 0;font-weight:700;color:var(--ink-3);}.ds-ph{margin:24px 0 0;font-weight:800;font-size:15px;}.ds-row{display:flex;flex-wrap:wrap;gap:20px 10px;list-style:none;margin:16px 0 0;padding:0;}.ds-part{--drop:4px;padding:5px 11px;font-size:15px;min-height:34px;cursor:default;}.ds-ghost{--c:var(--ghost);--fg:var(--ghost-ink);--k:var(--ghost-ink);}"
+    },
+    {
+      "name": "Skill Bar",
+      "kind": "custom",
+      "refersTo": "skill-flat",
+      "description": "A rated part: a pressable brick whose width is its level; untracked skills lie flat and dashed.",
+      "html": "<div class=\"ds-track\" style=\"--level:90%\"><button class=\"ds-brick ds-bar ds-blue\" aria-pressed=\"false\"><span>React / Next.js</span><span class=\"ds-v\">90</span></button></div><div class=\"ds-track\" style=\"--level:70%\"><span class=\"ds-bar ds-flat\"><span>Docker</span><span class=\"ds-v\">70</span></span></div>",
+      "css": ":host{--sky:#58b3ea;--sky-light:#9dd3f3;--page:#fff;--ink:#0d1014;--ink-2:#2f3a45;--ink-3:#4c5a68;--red:#e2231a;--yellow:#ffcd00;--ghost:#dde6ee;--ghost-ink:#4f5d6b;--error:#b3150e;--key:3px;--drop:5px;--r:10px;--r-brick:6px;--ease-out:cubic-bezier(0.23,1,0.32,1);font-family:'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif;}.ds-brick{--c:var(--yellow);--fg:var(--ink);--k:var(--ink);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--c);color:var(--fg);border:var(--key) solid var(--k);border-radius:var(--r-brick);box-shadow:0 var(--drop) 0 var(--k);font:inherit;font-weight:700;text-decoration:none;cursor:pointer;transition:transform 120ms var(--ease-out),box-shadow 120ms var(--ease-out);}.ds-brick::before{content:'';position:absolute;left:9px;right:9px;top:calc(-1 * var(--key) - 7px);height:7px;background:linear-gradient(var(--k),var(--k)) left top / 16px var(--key),linear-gradient(90deg,var(--k) 0 var(--key),var(--c) var(--key) calc(16px - var(--key)),var(--k) calc(16px - var(--key)) 16px) left top / 16px 100%;background-repeat:space no-repeat;pointer-events:none;}.ds-brick:hover{transform:translateY(-2px);box-shadow:0 calc(var(--drop) + 2px) 0 var(--k);}.ds-brick:active,.ds-brick[aria-pressed='true']{transform:translateY(var(--drop));box-shadow:0 0 0 var(--k);}.ds-brick:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-track{position:relative;margin:18px 0;background:repeating-linear-gradient(90deg,var(--ghost) 0 2px,transparent 2px 10%);border-radius:var(--r-brick);max-width:480px;}.ds-bar{--drop:4px;box-sizing:border-box;width:var(--level);min-width:200px;min-height:40px;justify-content:space-between;padding:0 12px;font-size:15px;}.ds-blue{--c:var(--sky-light);}.ds-v{font-weight:800;}button.ds-bar[aria-pressed='true']{outline:3px solid var(--ink);outline-offset:4px;}.ds-flat{display:inline-flex;align-items:center;border:2px dashed var(--ghost-ink);border-radius:var(--r-brick);background:var(--page);color:var(--ink-2);font-weight:700;}"
     }
   ],
   "narrative": {
-    "northStar": "The Component Datasheet",
-    "overview": "The site reads like the datasheet for a part an engineer can spec in a minute. It has a title block, a feature list, typical applications, a revision history, electrical-style characteristics and ordering information. Everything sits on cool white paper in carbon ink and is organised by hairline rules. The ruled table is the core component: projects, career, skills and contact details are all rows with a condensed label and a value. Density is moderate. Each section fills a screen and opens on a full-width ink rule, and inside it the content is tight and tabular rather than spread over cards.\n\nOne solder-mask green does two jobs: it fills the title-block band, and it marks state (the selected pin, focus, the live link, the hovered primary button, the active command). It is never used for decoration. The page is flat, with no glow and no gradients, and corners are square throughout. Screenshots sit flat inside a 1px ink frame and zoom slightly inside it on hover; they never lift. This replaces the previous dark \"dev portfolio\" look. The rejected template is a dark ground, a centred name, typewriter roles, a stat strip and a grid of equal cards.\n\nTypography is one family, Archivo, used across its width axis. The expanded width is for the name and headings, the condensed width for table heads, labels and metadata, and the normal width for reading. Wherever numbers appear they are tabular.",
+    "northStar": "The Build Booklet",
+    "overview": "The site is a brick set's assembly booklet. Each project is a numbered build step, the stack is the box of parts, and every step shows which parts it used. The page ground is instruction-page sky blue with a faint grid of white studs; content sits on white pages and call-out boxes drawn with thick black keylines and small radii. The parts are bricks in four colours (red, yellow, light blue, white), and the only depth in the world is a brick's: a solid ink drop straight down under raised pieces, which disappears when a piece is pressed flush.\n\nColour and play carry the personality; plain words carry the facts. Type is one family, Bricolage Grotesque, used very heavy (800) for the name, section heads and step numerals and regular-to-medium for reading text. Density is generous: one idea per booklet page, big numerals, large tap targets. The system refuses both the dark developer portfolio and the plain document page.\n\nMotion is assembly, not decoration: on load the name rises, step 1 drops in along its dashed arrow, the inventory bricks settle on a short non-uniform stagger, all once and ease-out. Nothing reveals on scroll. Reduced motion shows everything at rest.",
     "keyCharacteristics": [
-      "Paper ground, carbon ink, 1px rules at 16% ink; strong rules in full ink at section and table edges.",
-      "One green, used only for the title block and for active states.",
-      "Ruled tables and label/value rows rather than cards.",
-      "Archivo variable: wide (125%) for display, narrow (78%) for labels, normal for body. Tabular numerals globally.",
-      "Square corners everywhere; flat surfaces; image frames instead of shadows.",
-      "Motion: one clip-path wipe of the title band, a short content stagger, a 1.02 zoom inside frames, and a 0.97 press on buttons."
+      "Sky ground with a 28px white stud grid; white keylined pages on top.",
+      "3px black keylines on every page, brick, input and frame.",
+      "Solid straight-down ink drops; no blur, no diagonal offset, no gradients.",
+      "One brick colour per stack part, the same everywhere it appears.",
+      "New parts bright, parts already used ghosted; choosing a part lights the steps that use it and ghosts the rest.",
+      "Outlined white step numerals, very heavy."
     ],
     "rules": [
       {
-        "name": "The One Green Rule",
-        "body": "Green appears in two places only: the title block and active states (selected, focused, live, hovered primary, current revision). If green is on screen and nothing is selected, focused or hovered, it must be the title block.",
+        "name": "The One Ink Rule",
+        "body": "Text, keylines and drops are all the same ink. A second dark is never introduced for borders or shadows; ghosting swaps ink for ghost-ink as a whole.",
         "section": "colors"
       },
       {
-        "name": "The Ink Hierarchy Rule",
-        "body": "Text uses three inks: `ink` for content, `ink-2` for supporting prose, `ink-3` for labels and metadata. Don't add a fourth grey.",
+        "name": "The One Colour Per Part Rule",
+        "body": "Each tracked part has exactly one brick colour (`PARTS` in `src/shared/lib/tech.ts`) and keeps it in the hero inventory, every step, the alternate builds and the parts list. Untracked parts are white.",
         "section": "colors"
       },
       {
-        "name": "The Width-Axis Rule",
-        "body": "Hierarchy comes from width before size: wide for names and headings, narrow for labels and metadata, normal for prose. Never bring in a second family.",
+        "name": "The Ghosted Part Rule",
+        "body": "In a build step, a part no earlier step used is shown in its colour; a part already in the box is shown as a ghost brick. Step order is proarda, Njuškalo, Guardian, Udomi me.",
+        "section": "colors"
+      },
+      {
+        "name": "The Heavy Or Plain Rule",
+        "body": "Weight jumps straight from 800 (names, heads, numerals, labels) to 400–600 (reading text). Nothing in between carries hierarchy.",
         "section": "typography"
       },
       {
-        "name": "The No-Caps Label Rule",
-        "body": "Labels are condensed and in sentence case, never all caps or letter-spaced into kickers. A label belongs to a table head or a key/value row. It never floats above a heading.",
+        "name": "The Sentence Case Rule",
+        "body": "No uppercase, no letterspaced small caps. Labels are heavy sentence case.",
         "section": "typography"
       },
       {
-        "name": "The Tabular Rule",
-        "body": "Numerals are tabular everywhere (`font-variant-numeric: tabular-nums` on body), so dates, revisions and values line up in columns.",
-        "section": "typography"
-      },
-      {
-        "name": "The Column-Six Rule",
-        "body": "The second column of every split starts at grid line 6. Don't invent other split ratios for a new section.",
-        "section": "layout"
-      },
-      {
-        "name": "The Flat Sheet Rule",
-        "body": "Nothing on the page casts a shadow. The one exception is the modal command palette, which sits above the page.",
+        "name": "The Click-Down Rule",
+        "body": "Anything raised on a drop is pressable or is a part; pressing moves it down by exactly its drop and removes the drop. A pressed state never adds a shadow.",
         "section": "elevation"
       },
       {
-        "name": "The Frame-Not-Lift Rule",
-        "body": "Images respond inside their frame (scale 1.02, 300ms ease-out). Frames and cards never translate, rise or gain a shadow on hover.",
+        "name": "The Lie-Flat Rule",
+        "body": "Studs belong only to bricks. A skill with nothing to press is not a brick: untracked skills lie flat with no studs, no drop and a 2px dashed ghost-ink edge. Pages keep their deeper page drop, and lose it only when dimmed.",
         "section": "elevation"
-      },
-      {
-        "name": "The Square Corner Rule",
-        "body": "Radius is 0. The IC package notch is a drawn object, not a precedent for rounded UI.",
-        "section": "shapes"
       }
     ],
     "dos": [
-      "**Do** build new content as ruled rows: a condensed sentence-case label, a value, and a 16% hairline between rows, with full ink rules at the top and bottom of the table.",
-      "**Do** keep green to the title block and to state (selected, focused, live, current, primary hover).",
-      "**Do** start every split's second column at grid line 6 of the 12-column wrap (1240px, gutter clamp(16px, 4vw, 48px)).",
-      "**Do** use Archivo's width axis for hierarchy: wide (125%) for names and headings, narrow (78%) for labels, normal for prose.",
-      "**Do** put screenshots in a 1px ink frame and respond to hover inside it (scale 1.02, 300ms, cubic-bezier(0.23, 1, 0.32, 1)).",
-      "**Do** press buttons to 0.97, and let entrances run once: the title wipe at 760ms, then content at 380ms and 460ms delays.",
-      "**Do** bring every entrance to rest under `prefers-reduced-motion: reduce`."
+      "**Do** draw every container and control with the 3px ink keyline and a small radius (6px bricks, 8px inputs, 10px pages).",
+      "**Do** raise pressable things on a solid straight-down ink drop and click them down flush by the same distance when pressed.",
+      "**Do** give each stack part its one colour from `PARTS` and use it everywhere that part appears.",
+      "**Do** show parts new to a step bright and parts already used as ghost bricks.",
+      "**Do** keep entrances to one-time, ease-out (cubic-bezier(0.23, 1, 0.32, 1)) assembly moves on load, with content visible throughout.",
+      "**Do** keep step numerals white-filled with a 3px ink stroke at weight 800.",
+      "**Do** keep a 20px row gap between wrapping rows of bricks so studs clear the brick above."
     ],
     "donts": [
-      "**Don't** use a dark ground, a centred name, typewriter roles, a stat strip or a grid of equal cards. That is the dev-portfolio look this system replaced.",
-      "**Don't** round corners, add gradients or glow, or lift anything on hover. Only the modal palette casts a shadow.",
-      "**Don't** use green as decoration, as a section background beyond the title block, or for a second accent.",
-      "**Don't** set labels in all caps or float them above headings as eyebrows.",
-      "**Don't** animate the command palette's open or close.",
-      "**Don't** add a second typeface or a monospace face. Keycaps and pin numbers use narrow Archivo."
+      "**Don't** blur a shadow, offset one diagonally, or add gradients to bricks or pages; depth is only the solid drop.",
+      "**Don't** draw an untracked skill as a brick; it lies flat with no studs and no drop.",
+      "**Don't** add scroll-triggered reveals.",
+      "**Don't** colour a part differently in two places.",
+      "**Don't** set reading text in ink-3 on the sky ground (3.05:1); on sky, text is ink.",
+      "**Don't** introduce a second typeface or uppercase labels."
     ]
   }
 }

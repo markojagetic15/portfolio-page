@@ -22,28 +22,26 @@ export default function Nav() {
     <header className={styles.nav}>
       <div className={`wrap ${styles.inner}`}>
         <a href="#top" className={styles.mark} aria-label="Marko Jagetić, back to top">
-          <span className={styles.chip} aria-hidden="true">MJ</span>
+          <span className={`brick red ${styles.chip}`} aria-hidden="true">MJ</span>
           <span className={styles.markText}>Marko Jagetić</span>
         </a>
 
         <nav aria-label="Sections" className={styles.links}>
           {SECTIONS.map((s) => (
-            <a key={s.id} href={`#${s.id}`} className={styles.navLink}>
-              {s.label}
-            </a>
+            <a key={s.id} href={`#${s.id}`} className={styles.navLink}>{s.label}</a>
           ))}
         </nav>
 
-        <button type="button" className={styles.search} onClick={openPalette} aria-label="Open the command menu">
+        <button type="button" className={`brick white ${styles.search}`} onClick={openPalette} aria-label="Open the command menu">
           <span>Index</span>
           <kbd className={styles.kbd}>{isMac ? "⌘" : "Ctrl"} K</kbd>
         </button>
 
-        <a className={`btn btnPrimary ${styles.cta}`} href={`mailto:${EMAIL}`}>Email Marko</a>
+        <a className={`brick ${styles.cta}`} href={`mailto:${EMAIL}`}>Email Marko</a>
 
         <button
           type="button"
-          className={styles.menuBtn}
+          className={`brick white ${styles.menuBtn}`}
           aria-expanded={menuOpen}
           aria-controls="phone-menu"
           onClick={() => setMenuOpen((o) => !o)}
@@ -52,12 +50,13 @@ export default function Nav() {
         </button>
       </div>
 
-      <div id="phone-menu" className={styles.sheet} data-open={menuOpen} hidden={!menuOpen}>
+      <div id="phone-menu" className={styles.sheet} hidden={!menuOpen}>
         <nav aria-label="Sections" className="wrap">
           <ul>
-            {SECTIONS.map((s) => (
+            {SECTIONS.map((s, i) => (
               <li key={s.id}>
                 <a href={`#${s.id}`} onClick={() => setMenuOpen(false)}>
+                  <span className={styles.sheetNo} aria-hidden="true">{i + 1}</span>
                   {s.label}
                 </a>
               </li>

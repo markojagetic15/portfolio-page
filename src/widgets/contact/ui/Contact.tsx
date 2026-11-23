@@ -63,7 +63,7 @@ export default function Contact() {
     };
     return (
       <div className={styles.field}>
-        <label htmlFor={`f-${name}`} className="label">{label}</label>
+        <label htmlFor={`f-${name}`} className={styles.label}>{label}</label>
         {type === "area" ? <textarea rows={5} {...common} /> : <input type={type} {...common} />}
         {err && <p id={`e-${name}`} className={styles.error}>{err}</p>}
       </div>
@@ -73,53 +73,55 @@ export default function Contact() {
   return (
     <section id="contact" className="section" aria-labelledby="contact-title">
       <div className="wrap">
-        <div className="sectionHead split">
+        <div className="sectionHead">
           <h2 id="contact-title">Contact</h2>
           <p>Email reaches me fastest. The form fills in an email for you to send from your own mail app.</p>
         </div>
 
-        <div className={`split ${styles.grid}`}>
-          <div>
-          <dl className={styles.info}>
-            <div className={styles.row}>
-              <dt className="label">Email</dt>
-              <dd className={styles.emailRow}>
-                <a className="link" href={`mailto:${EMAIL}`}>{EMAIL}</a>
-                <button type="button" className={styles.copy} onClick={copy} aria-live="polite">
-                  {copied ? "Copied" : "Copy"}
-                </button>
-              </dd>
-            </div>
-            <div className={styles.row}>
-              <dt className="label">LinkedIn</dt>
-              <dd><a className="link" href={LINKEDIN} target="_blank" rel="noreferrer">Marko Jagetić</a></dd>
-            </div>
-            <div className={styles.row}>
-              <dt className="label">Location</dt>
-              <dd>Zagreb, Croatia (UTC+1)</dd>
-            </div>
-          </dl>
-          <img className={styles.portrait} src="/work/portrait.webp" alt="Marko Jagetić" width={480} height={480} decoding="async" />
+        <div className={styles.grid}>
+          <div className={`panel ${styles.card}`}>
+            <img className={styles.portrait} src="/work/portrait.webp" alt="Marko Jagetić" width={480} height={480} decoding="async" />
+            <dl className={styles.info}>
+              <div className={styles.row}>
+                <dt>Email</dt>
+                <dd className={styles.emailRow}>
+                  <a className="link" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                  <button type="button" className={`brick white ${styles.copy}`} onClick={copy} aria-live="polite">
+                    {copied ? "Copied" : "Copy"}
+                  </button>
+                </dd>
+              </div>
+              <div className={styles.row}>
+                <dt>LinkedIn</dt>
+                <dd><a className="link" href={LINKEDIN} target="_blank" rel="noreferrer">Marko Jagetić</a></dd>
+              </div>
+              <div className={styles.row}>
+                <dt>Location</dt>
+                <dd>Zagreb, Croatia (UTC+1)</dd>
+              </div>
+            </dl>
           </div>
 
-          {opened ? (
-            <div className={styles.sent} role="status">
-              <h3>Your email is ready in your mail app</h3>
-              <p>Press send there and it reaches me. If nothing opened, write to {EMAIL} directly.</p>
-              <button type="button" className="btn btnGhost" onClick={() => { setOpened(false); setForm({ name: "", email: "", message: "" }); }}>
-                Write another
-              </button>
-            </div>
-          ) : (
-            <form className={styles.form} onSubmit={onSubmit} noValidate>
-              <div className={styles.pair}>
-                {field("name", "Name", "text", "name")}
-                {field("email", "Your email", "email", "email")}
+          <div className={`panel ${styles.formCard}`}>
+            {opened ? (
+              <div className={styles.sent} role="status">
+                <h3>Your email is ready in your mail app</h3>
+                <p>Press send there and it reaches me. If nothing opened, write to {EMAIL} directly.</p>
+                <button type="button" className="brick white btn" onClick={() => { setOpened(false); setForm({ name: "", email: "", message: "" }); }}>
+                  Write another
+                </button>
               </div>
-              {field("message", "Message", "area", "off")}
-              <button type="submit" className="btn btnPrimary">Send email</button>
-            </form>
-          )}
+            ) : (
+              <form className={styles.form} onSubmit={onSubmit} noValidate>
+                <div className={styles.pair}>
+                  {field("name", "Name", "text", "name")}
+                  {field("email", "Your email", "email", "email")}
+                </div>
+                {field("message", "Message", "area", "off")}
+                <button type="submit" className={`brick btn ${styles.submit}`}>Send email</button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </section>

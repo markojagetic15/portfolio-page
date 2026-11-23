@@ -1,0 +1,64 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(24px, 3.5vw, 48px);
+  align-items: start;
+}
+
+/* Each rated part is a brick whose length is its level. */
+.list { padding: 28px 22px 18px; display: grid; gap: 22px; box-shadow: 0 8px 0 var(--ink); }
+.track {
+  position: relative;
+  /* faint ruler of 10-point stud marks behind each brick */
+  background: repeating-linear-gradient(90deg, var(--ghost) 0 2px, transparent 2px 10%);
+  border-radius: var(--r-brick);
+}
+.bar {
+  --drop: 4px;
+  width: var(--level);
+  min-width: 200px;
+  min-height: 40px;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-size: 15px;
+  text-align: left;
+}
+.name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.value { font-weight: 800; flex: none; }
+button.bar[aria-pressed="true"] { outline: 3px solid var(--ink); outline-offset: 4px; }
+
+/* Skills with no "where used" readout lie flat: no studs, no drop, nothing to press. */
+.flat {
+  display: inline-flex;
+  align-items: center;
+  border: 2px dashed var(--ghost-ink);
+  border-radius: var(--r-brick);
+  background: var(--page);
+  color: var(--ink-2);
+  font-weight: 700;
+}
+
+.readout { padding: 22px; position: sticky; top: calc(var(--nav-h) + 24px); box-shadow: 0 8px 0 var(--ink); }
+.readHead { font-weight: 800; font-size: 17px; }
+.count { display: flex; align-items: baseline; gap: 12px; margin: 10px 0 14px; font-weight: 800; font-size: 20px; }
+.count :global(.numeral) { font-size: 88px; }
+.uses li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-top: 2px solid var(--ghost);
+  font-weight: 700;
+  font-size: 16px;
+}
+.note { font-weight: 500; color: var(--ink-3); text-align: right; }
+.subHead { margin-top: 18px; margin-bottom: 4px; font-weight: 800; font-size: 15px; color: var(--ink-3); }
+.readActions { display: flex; gap: 18px; margin-top: 18px; font-size: 16px; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .readout { position: static; }
+}
+@media (max-width: 420px) {
+  .bar { min-width: 100%; }
+}

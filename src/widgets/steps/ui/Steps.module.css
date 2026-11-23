@@ -1,0 +1,102 @@
+.steps { display: grid; gap: clamp(40px, 5vw, 64px); }
+
+/* A booklet page: words on one side, the picture on the other; pages alternate. */
+.step {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  padding: clamp(24px, 3.4vw, 44px);
+  box-shadow: 0 8px 0 var(--ink);
+}
+.step[data-flip] { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.step[data-flip] .text { order: 2; }
+
+.text { position: relative; }
+.no { display: block; font-size: clamp(96px, 10vw, 150px); margin: -8px 0 12px -6px; }
+.title { font-size: clamp(34px, 3.6vw, 48px); font-weight: 800; letter-spacing: -0.035em; }
+.role { margin-top: 8px; font-weight: 700; color: var(--ink-3); }
+.summary { margin-top: 14px; font-size: 18px; line-height: 1.45; max-width: 44ch; font-weight: 500; }
+
+.partsHead { margin-top: 24px; font-weight: 800; font-size: 15px; }
+.parts { display: flex; flex-wrap: wrap; gap: 20px 10px; margin-top: 16px; }
+.part { --drop: 4px; padding: 5px 11px; font-size: 15px; min-height: 34px; }
+.note { margin-top: 14px; font-size: 15px; color: var(--ink-3); font-weight: 600; }
+.status { margin-top: 22px; font-size: 17px; }
+.private { font-weight: 700; color: var(--ink-3); }
+
+.frame {
+  display: block;
+  overflow: hidden;
+  border: var(--key) solid var(--ink);
+  border-radius: calc(var(--r) - 2px);
+  aspect-ratio: 16 / 10;
+  background: var(--ghost);
+}
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  transition: transform 300ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  a.frame:hover img { transform: scale(1.025); }
+}
+
+/* Chosen in the parts list: matching pages stand up on a yellow drop, the rest ghost. */
+.step, .alt { transition: box-shadow 200ms ease, transform 200ms var(--ease-out), border-color 200ms ease; }
+.step img, .alt img { transition: filter 200ms ease, opacity 200ms ease, transform 300ms var(--ease-out); }
+.step[data-state="lit"], .alt[data-state="lit"] { outline: 5px solid var(--yellow); outline-offset: 5px; transform: translateY(-4px); }
+/* Dimmed pages keep their text at full ink; only the picture and the bricks fade. */
+.step[data-state="dim"], .alt[data-state="dim"] { box-shadow: none; border-color: var(--ghost-ink); }
+.step[data-state="dim"] img, .alt[data-state="dim"] img { filter: grayscale(1); opacity: 0.5; }
+.step[data-state="dim"] :global(.brick), .alt[data-state="dim"] :global(.brick) { --c: var(--ghost); --fg: var(--ghost-ink); --k: var(--ghost-ink); }
+
+/* Alternate builds: booklet pages in a strip you flip through. */
+.altWrap { margin-top: clamp(64px, 8vw, 104px); }
+.altHead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px; margin-bottom: 28px; }
+.altHead h3 { font-size: clamp(32px, 3.6vw, 48px); font-weight: 800; letter-spacing: -0.035em; }
+.altHead p { font-size: 18px; font-weight: 500; margin-top: 6px; }
+.flip { display: flex; align-items: center; gap: 14px; padding-top: 10px; }
+.flip :global(.brick) { --drop: 4px; width: 52px; height: 48px; font-size: 22px; }
+.flip :global(.brick):disabled { opacity: 0.4; cursor: default; transform: none; }
+.pageNo { font-weight: 800; font-size: 18px; min-width: 52px; text-align: center; }
+
+.alts {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(820px, 88%);
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  padding: 14px 4px 22px;
+  margin-inline: -4px;
+  scrollbar-width: thin;
+}
+.alts:focus-visible { outline-offset: 0; }
+.alt {
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  overflow: hidden;
+  box-shadow: 0 8px 0 var(--ink);
+}
+.thumb { border-right: var(--key) solid var(--ink); overflow: hidden; background: var(--ghost); min-height: 100%; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.altBody { padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+.altBody h4 { font-size: var(--h3); font-weight: 800; letter-spacing: -0.025em; }
+.altBody p { font-size: 16px; line-height: 1.45; font-weight: 500; }
+.altParts { display: flex; flex-wrap: wrap; gap: 18px 8px; margin: 12px 0 8px; }
+.altBody :global(.link), .altBody .private { font-size: 16px; align-self: flex-start; margin-top: auto; }
+
+@media (max-width: 900px) {
+  .step, .step[data-flip] { grid-template-columns: 1fr; }
+  .step[data-flip] .text { order: 0; }
+}
+@media (max-width: 640px) {
+  .alts { grid-auto-columns: 86%; }
+  .alt { grid-template-columns: 1fr; }
+  .thumb { border-right: 0; border-bottom: var(--key) solid var(--ink); aspect-ratio: 16 / 10; }
+}

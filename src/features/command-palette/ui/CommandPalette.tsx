@@ -25,7 +25,7 @@ export default function CommandPalette() {
 
   const commands: Command[] = useMemo(
     () => [
-      { id: "top", label: "Title block", group: "Go to", action: () => go("top") },
+      { id: "top", label: "Top of page", group: "Go to", action: () => go("top") },
       ...SECTIONS.map((s) => ({ id: s.id, label: s.label, group: "Go to", action: () => go(s.id) })),
       ...projects
         .filter((p) => p.link)

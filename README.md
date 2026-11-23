@@ -6,26 +6,26 @@ Live at **[jagetic.com](https://jagetic.com)**.
 
 ## Design
 
-The page is laid out as a **component datasheet**: a green title block, features, a typical application, revision history, characteristics and contact. Paper, carbon ink and hairline rules, with one solder-mask green that marks the title block and every active state. The type is **Archivo**, self-hosted in `public/fonts/` and used across its width axis.
+The page is laid out as a **brick build-instruction booklet**. Each project is a numbered build step, the stack is the box of parts, and each step shows which parts it used: new parts are bright, parts from earlier steps are greyed out. The ground is sky blue with a faint stud grid, under white keylined pages and primary-colour bricks. Every brick and button sits raised on an ink drop and clicks down flush when pressed. The type is **Bricolage Grotesque**, self-hosted in `public/fonts/`.
 
 - Product facts: `PRODUCT.md`. Visual system: `DESIGN.md`. Page strategy: `.impeccable/surfaces/`.
-- Content lives in `src/entities/*/data` (projects, experience, skills). Edit those to change the page.
-- Project screenshots are `public/work/*.webp` (1600 px wide). The original PNGs are in git history (removed 2026-11-23).
+- Content lives in `src/entities/*/data` (projects, experience, skills). The step order and the "new vs already used" parts logic are in `src/shared/lib/build.ts`. Part colours and the skill-to-part mapping are in `src/shared/lib/tech.ts`.
+- Project screenshots are `public/work/*.webp` (1600 px wide).
 
 ## Sections
 
 | Section | What it shows |
 |---|---|
-| Title block (hero) | Name, role, datasheet meta, four features, proarda as the typical application |
-| Applications | Udomi me, Njuškalo and Guardian as full plates; the rest of the projects in a table |
-| Revision history | Experience as a revision table, newest first |
-| Characteristics | Stack pinout (pick a pin to see where each technology was used) and the self-rated skill levels |
+| Hero | Name, sub-line, Email Marko + LinkedIn, the box of parts, and proarda as step 1 |
+| Build steps | Njuškalo, Guardian and Udomi me as steps 2–4, then a flippable strip of alternate builds |
+| Build history | Experience as a staircase of bricks, 2022 to now |
+| Parts list | Self-rated skill levels as bricks; choosing one shows where it was used and lights the matching steps |
 | Contact | Email (with a copy button), LinkedIn, portrait, and a mailto form |
 
 ## Features
 
 - **Command menu**: `Cmd/Ctrl + K`, or the Index button in the nav.
-- **Stack pinout**: works with pointer or arrow keys.
+- **Parts list**: choose a part and the steps and alternate builds that use it light up; Clear resets.
 - **Easter egg**: type `hireme` anywhere outside a form field.
 - Reduced-motion users get the page at rest.
 
@@ -35,12 +35,12 @@ Feature-Sliced Design:
 
 ```
 src/
-  app/        # global styles (tokens, font, buttons, split grid), App
+  app/        # global styles (tokens, font, the brick primitive), App
   pages/      # HomePage composition
-  widgets/    # nav, hero, applications, history, characteristics, contact, footer
+  widgets/    # nav, hero, steps, history, parts, contact, footer
   features/   # command palette, easter egg
   entities/   # project / experience / skill data + types
-  shared/     # config (email, links, sections), tech-name helpers, SpecTable
+  shared/     # config, parts/steps logic (lib/tech, lib/build), part selection context
 ```
 
 ## Getting started

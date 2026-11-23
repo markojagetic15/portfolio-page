@@ -1,53 +1,57 @@
-/* jagetic.com: datasheet world.
-   Paper, carbon ink, hairline rules, one solder-mask green that owns the
-   title block and every active state. Archivo across its width axis. */
+/* jagetic.com: brick build-instruction world.
+   Sky-blue instruction pages with a faint stud grid, white keylined pages and
+   call-outs, primary-colour parts, black ink. A raised piece sits on a solid
+   ink drop; pressing it clicks it down flush. Bricolage Grotesque throughout. */
 
 @font-face {
-  font-family: "Archivo";
+  font-family: "Bricolage Grotesque";
   font-style: normal;
-  font-weight: 100 900;
-  font-stretch: 62% 125%;
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
   font-display: swap;
-  src: url("/fonts/archivo-latin-ext.woff2") format("woff2");
+  src: url("/fonts/bricolage-latin-ext.woff2") format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
-  font-family: "Archivo";
+  font-family: "Bricolage Grotesque";
   font-style: normal;
-  font-weight: 100 900;
-  font-stretch: 62% 125%;
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
   font-display: swap;
-  src: url("/fonts/archivo-latin.woff2") format("woff2");
+  src: url("/fonts/bricolage-latin.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
   color-scheme: light;
 
-  --paper: #f6f7f5;
-  --paper-2: #eceeea;
-  --ink: #121412;
-  --ink-2: #444a45;
-  --ink-3: #5f665f;
-  --rule: rgba(18, 20, 18, 0.16);
-  --rule-strong: #121412;
-  --green: #0e6b45;
-  --green-deep: #0a5236;
-  --green-ink: #eef6f1;
-  --green-ink-2: #c9e4d5;
-  --green-tint: #dcebe2;
+  --sky: #58b3ea;
+  --sky-deep: #3d9ad6;
+  --sky-light: #9dd3f3;
+  --page: #ffffff;
+  --ink: #0d1014;
+  --ink-2: #2f3a45;
+  --ink-3: #4c5a68;
+  --red: #e2231a;
+  --yellow: #ffcd00;
+  --ghost: #dde6ee;
+  --ghost-ink: #4f5d6b;
+  --error: #b3150e;
 
-  --font: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --wide: 125%;
-  --narrow: 78%;
+  --font: "Bricolage Grotesque", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --key: 3px;               /* keyline */
+  --drop: 5px;              /* raised piece height */
+  --r: 10px;                /* page / panel radius */
+  --r-brick: 6px;
+  --stud: 28px;             /* stud grid module */
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 
   --wrap: 1240px;
   --gutter: clamp(16px, 4vw, 48px);
-  --nav-h: 56px;
-  --h3: clamp(22px, 2vw, 28px);
+  --nav-h: 68px;
+  --h3: clamp(24px, 2.4vw, 32px);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -60,9 +64,13 @@ html {
 body {
   font-family: var(--font);
   font-size: 17px;
-  line-height: 1.55;
-  background: var(--paper);
+  line-height: 1.5;
   color: var(--ink);
+  background-color: var(--sky);
+  /* The instruction page's stud grid. */
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.32) 2.4px, transparent 2.8px);
+  background-size: var(--stud) var(--stud);
+  background-position: calc(var(--stud) / 2) calc(var(--stud) / 2);
   font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
@@ -73,14 +81,13 @@ a { color: inherit; }
 button, input, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; background: none; border: 0; }
 ul, ol { list-style: none; }
-h1, h2, h3 { font-weight: 700; line-height: 1.1; text-wrap: balance; }
+h1, h2, h3 { line-height: 1; text-wrap: balance; }
 p { text-wrap: pretty; }
 
-/* Browser surfaces carry the world too. */
-::selection { background: var(--green); color: var(--green-ink); }
-:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
-html { scrollbar-color: var(--ink-3) var(--paper-2); }
-input, textarea { caret-color: var(--green); }
+::selection { background: var(--yellow); color: var(--ink); }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+html { scrollbar-color: var(--ink) var(--sky-light); }
+input, textarea { caret-color: var(--red); }
 
 #root { min-height: 100vh; }
 
@@ -89,126 +96,129 @@ input, textarea { caret-color: var(--green); }
   margin-inline: auto;
 }
 
-/* One 12-column grid for every split: text in columns 1-5, the visual or
-   the second column from line 6 to the right edge. */
-.split {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: 24px;
-  row-gap: 32px;
-}
-.split > :first-child { grid-column: 1 / span 5; }
-.split > :last-child { grid-column: 6 / -1; }
-@media (max-width: 900px) {
-  .split > :first-child, .split > :last-child { grid-column: 1 / -1; }
-}
-
 .skip {
   position: absolute;
   left: 16px;
-  top: -64px;
+  top: -80px;
   z-index: 1000;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--yellow);
+  border: var(--key) solid var(--ink);
   padding: 12px 16px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
 }
 .skip:focus-visible { top: 12px; }
 
-/* Section frame: every section opens with its h2 on a full-width rule. */
-.section {
-  min-height: 100svh;
-  padding-block: clamp(64px, 9vw, 120px);
-  border-top: 1px solid var(--rule-strong);
-}
+/* ---- Pages and sections ------------------------------------------------ */
+
+.section { padding-block: clamp(72px, 9vw, 128px); }
+
 .sectionHead {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: 16px 48px;
   align-items: end;
-  row-gap: 16px;
-  margin-bottom: clamp(32px, 5vw, 56px);
+  margin-bottom: clamp(32px, 4vw, 56px);
 }
 .sectionHead h2 {
-  font-size: clamp(34px, 4.1vw, 56px);
-  font-stretch: var(--wide);
-  letter-spacing: -0.025em;
-  line-height: 1;
+  font-size: clamp(44px, 6.4vw, 88px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
 }
 .sectionHead p {
-  color: var(--ink-2);
-  max-width: 52ch;
-  font-size: 18px;
+  font-size: 19px;
+  line-height: 1.45;
+  max-width: 44ch;
+  font-weight: 500;
+}
+@media (max-width: 820px) {
+  .sectionHead { grid-template-columns: 1fr; }
 }
 
-
-/* Datasheet table head label: condensed, never all caps. */
-.label {
-  font-stretch: var(--narrow);
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.01em;
-  color: var(--ink-3);
+/* A white instruction page / call-out box. */
+.panel {
+  background: var(--page);
+  border: var(--key) solid var(--ink);
+  border-radius: var(--r);
 }
 
-/* Buttons: square, step on hover, press on click. */
-.btn {
+/* ---- Bricks: the one raised component ---------------------------------- */
+/* Studs are drawn on top: outlined bumps every 28px. --c sets the colour. */
+.brick {
+  --c: var(--yellow);
+  --fg: var(--ink);
+  --k: var(--ink);
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 48px;
-  padding: 0 22px;
-  font-weight: 600;
-  font-size: 16px;
+  background: var(--c);
+  color: var(--fg);
+  border: var(--key) solid var(--k);
+  border-radius: var(--r-brick);
+  box-shadow: 0 var(--drop) 0 var(--k);
+  font-weight: 700;
   text-decoration: none;
-  border: 1px solid var(--ink);
-  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms var(--ease-out);
+  transition: transform 120ms var(--ease-out), box-shadow 120ms var(--ease-out);
   user-select: none;
 }
-.btn:active { transform: scale(0.97); }
-.btnPrimary { background: var(--ink); color: var(--paper); }
-.btnGhost { background: transparent; color: var(--ink); }
-@media (hover: hover) and (pointer: fine) {
-  .btnPrimary:hover { background: var(--green); border-color: var(--green); }
-  .btnGhost:hover { background: var(--ink); color: var(--paper); }
-}
-.btn svg { flex: none; }
-
-/* Inline text link: underline draws from the left on hover. */
-.link {
-  text-decoration: none;
-  font-weight: 600;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 100% 1px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  padding-bottom: 1px;
-  transition: color 160ms ease;
-}
-@media (hover: hover) and (pointer: fine) {
-  .link:hover { color: var(--green); animation: draw 360ms var(--ease-out); }
-}
-.link:focus-visible { background-color: var(--green-tint); outline-offset: 2px; }
-@keyframes draw {
-  from { background-size: 0% 1px; }
-  to { background-size: 100% 1px; }
-}
-
-/* Small square bullet used in feature lists. */
-/* Bullets hang in the margin so the text keeps the column line. */
-.bullets li { position: relative; }
-.bullets li::before {
+.brick::before {
   content: "";
   position: absolute;
-  left: -18px;
-  top: 0.6em;
-  width: 7px;
+  left: 9px;
+  right: 9px;
+  top: calc(-1 * var(--key) - 7px);
   height: 7px;
-  background: var(--ink);
+  /* Whole studs only: "space" spreads full 16px tiles evenly, never clipping one. */
+  background:
+    linear-gradient(var(--k), var(--k)) left top / 16px var(--key),
+    linear-gradient(90deg, var(--k) 0 var(--key), var(--c) var(--key) calc(16px - var(--key)), var(--k) calc(16px - var(--key)) 16px) left top / 16px 100%;
+  background-repeat: space no-repeat;
+  pointer-events: none;
+}
+.brick.red { --c: var(--red); --fg: #fff; }
+.brick.blue { --c: var(--sky-light); }
+.brick.white { --c: var(--page); }
+.brick.ghost { --c: var(--ghost); --fg: var(--ghost-ink); --k: var(--ghost-ink); }
+
+/* Interactive bricks lift a hair on hover and click down flush when pressed. */
+a.brick, button.brick { cursor: pointer; }
+@media (hover: hover) and (pointer: fine) {
+  a.brick:hover, button.brick:hover { transform: translateY(-2px); box-shadow: 0 calc(var(--drop) + 2px) 0 var(--k); }
+}
+a.brick:active, button.brick:active, button.brick[aria-pressed="true"] {
+  transform: translateY(var(--drop));
+  box-shadow: 0 0 0 var(--k);
 }
 
-@media (max-width: 600px) {
-  .bullets li { padding-left: 14px; }
-  .bullets li::before { left: 0; width: 6px; height: 6px; }
+/* Buttons are bricks with a size. */
+.btn { min-height: 52px; padding: 0 24px; font-size: 17px; }
+.btn svg { flex: none; }
+
+/* Inline link: thick underline that fills yellow on hover. */
+.link {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  border-radius: 3px;
+  transition: background-color 140ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .link:hover { background: var(--yellow); }
+}
+.link:focus-visible { background: var(--yellow); }
+
+/* A step numeral: white fill, ink outline, very heavy. */
+.numeral {
+  font-weight: 800;
+  line-height: 0.8;
+  color: var(--page);
+  -webkit-text-stroke: var(--key) var(--ink);
+  paint-order: stroke fill;
+  letter-spacing: -0.04em;
 }
 
 .visuallyHidden {
@@ -217,4 +227,8 @@ input, textarea { caret-color: var(--green); }
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0ms !important; animation: none !important; }
 }
