@@ -1,0 +1,85 @@
+.plates { border-top: 1px solid var(--rule-strong); }
+
+/* Every plate is the same band: spec on the left, picture on the right. */
+.plate {
+  padding-block: clamp(28px, 3.5vw, 44px);
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.frame {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--rule-strong);
+  aspect-ratio: 16 / 9;
+  background: var(--paper-2);
+}
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  transition: transform 300ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  a.frame:hover img { transform: scale(1.02); }
+}
+
+.spec { display: flex; flex-direction: column; }
+.name {
+  font-size: var(--h3);
+  font-stretch: var(--wide);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.summary {
+  color: var(--ink-2);
+  font-size: 18px;
+  margin-bottom: 24px;
+  max-width: 44ch;
+}
+
+.otherHead {
+  font-size: var(--h3);
+  font-stretch: var(--wide);
+  letter-spacing: -0.01em;
+  margin: clamp(48px, 6vw, 72px) 0 16px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.table th, .table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 12px 16px 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.table thead th {
+  border-bottom: 1px solid var(--rule-strong);
+  border-top: 1px solid var(--rule-strong);
+}
+.table tbody th { font-weight: 700; white-space: nowrap; }
+.table td:last-child, .table th:last-child { padding-right: 0; white-space: nowrap; }
+.stack { color: var(--ink-2); }
+.private { color: var(--ink-3); }
+.table tbody tr { transition: background-color 160ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .table tbody tr:hover { background: var(--paper-2); }
+}
+
+
+
+/* Phones: each table row becomes a small stacked record. */
+@media (max-width: 720px) {
+  .table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .table, .table tbody, .table tr, .table th, .table td { display: block; }
+  .table tr { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .table tbody tr:first-child { border-top: 1px solid var(--rule-strong); }
+  .table th, .table td { border: 0; padding: 2px 0; white-space: normal; }
+  .table td:last-child { padding-top: 8px; }
+}
+
+a.frame:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }

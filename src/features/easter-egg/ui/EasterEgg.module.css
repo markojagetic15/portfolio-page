@@ -1,98 +1,47 @@
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 99990;
+  z-index: 300;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(8, 11, 20, 0.88);
-  backdrop-filter: blur(8px);
-  animation: fadeIn 0.3s ease;
+  padding: 16px;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  animation: fade 200ms ease both;
 }
+@keyframes fade { from { opacity: 0; } }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
+/* Square pads burst outward, like solder pads off a board. */
 .particle {
   position: absolute;
-  border-radius: 50%;
-  animation: burst 1.4s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
+  animation: burst 1.2s var(--ease-out) forwards;
 }
-
 @keyframes burst {
-  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
-  100% {
-    transform:
-      translate(
-        calc(cos(var(--angle)) * var(--speed)),
-        calc(sin(var(--angle)) * var(--speed))
-      )
-      scale(0);
+  to {
+    transform: translate(calc(cos(var(--angle)) * var(--speed)), calc(sin(var(--angle)) * var(--speed))) rotate(90deg) scale(0.6);
     opacity: 0;
   }
 }
 
 .message {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
   z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  text-align: center;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 32px clamp(20px, 5vw, 48px);
+  animation: pop 280ms var(--ease-out) both;
 }
+@keyframes pop { from { opacity: 0; transform: scale(0.96); } }
 
-@keyframes popIn {
-  from { opacity: 0; transform: scale(0.85) translateY(20px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
-}
+.title { font-size: clamp(26px, 4vw, 36px); font-stretch: var(--wide); letter-spacing: -0.02em; }
+.sub { color: var(--ink-2); font-size: 18px; }
+.hint { font-size: 14px; color: var(--ink-3); }
 
-.emoji {
-  font-size: 52px;
-  line-height: 1;
-}
-
-.title {
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -1px;
-}
-
-.sub {
-  font-size: 16px;
-  color: var(--text-muted);
-}
-
-.sub code {
-  font-family: var(--font-mono);
-  color: var(--accent);
-  background: var(--accent-glow);
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-.cta {
-  margin-top: 8px;
-  background: var(--accent);
-  color: #080b14;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 12px 28px;
-  border-radius: 10px;
-  transition: all 0.2s;
-}
-
-.cta:hover {
-  background: #79baff;
-  transform: translateY(-2px);
-}
-
-.hint {
-  font-size: 12px;
-  color: var(--text-subtle);
-  font-family: var(--font-mono);
-  margin-top: 4px;
+@media (prefers-reduced-motion: reduce) {
+  .particle { display: none; }
+  .message { animation: none; }
 }

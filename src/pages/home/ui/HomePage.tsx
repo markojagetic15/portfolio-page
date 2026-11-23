@@ -1,47 +1,28 @@
-import { Hero } from "../../../widgets/hero";
-import { About } from "../../../widgets/about";
-import { Experience } from "../../../widgets/experience";
-import { Projects } from "../../../widgets/projects";
-import { Skills } from "../../../widgets/skills";
-import { Contact } from "../../../widgets/contact";
 import { Nav } from "../../../widgets/nav";
+import { Hero } from "../../../widgets/hero";
+import { Applications } from "../../../widgets/applications";
+import { History } from "../../../widgets/history";
+import { Characteristics } from "../../../widgets/characteristics";
+import { Contact } from "../../../widgets/contact";
 import { Footer } from "../../../widgets/footer";
 import { CommandPalette } from "../../../features/command-palette";
 import { EasterEgg } from "../../../features/easter-egg";
-import PageLoader from "../../../shared/ui/page-loader/PageLoader";
-import ParticleBackground from "../../../shared/ui/particle-background/ParticleBackground";
-import ScrollProgress from "../../../shared/ui/scroll-progress/ScrollProgress";
-import Grain from "../../../shared/ui/grain/Grain";
-import Cursor from "../../../shared/ui/cursor/Cursor";
-
-const Divider = () => <div className="sectionDivider" />;
 
 export default function HomePage() {
   return (
     <>
-      <PageLoader />
-      <ParticleBackground />
-      <ScrollProgress />
-      <Grain />
-      <Cursor />
-      <EasterEgg />
-      <CommandPalette />
+      <a className="skip" href="#main">Skip to content</a>
       <Nav />
-      <main>
+      <main id="main">
         <Hero />
-        <Divider />
-        <About />
-        <Divider />
-        <Experience />
-        <Divider />
-        <Projects />
-        <Divider />
-        <Divider />
-        <Skills />
-        <Divider />
+        <Applications />
+        <History />
+        <Characteristics />
         <Contact />
       </main>
       <Footer />
+      <CommandPalette />
+      <EasterEgg />
     </>
   );
 }

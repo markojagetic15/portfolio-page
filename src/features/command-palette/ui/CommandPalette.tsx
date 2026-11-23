@@ -1,167 +1,178 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { EMAIL, LINKEDIN, OPEN_PALETTE, SECTIONS } from "../../../shared/config";
+import { projects } from "../../../entities/project";
 import styles from "./CommandPalette.module.css";
 
 interface Command {
   id: string;
   label: string;
   group: string;
-  icon: React.ReactNode;
+  hint?: string;
   action: () => void;
 }
 
-const ArrowIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 12h14M12 5l7 7-7 7"/>
-  </svg>
-);
-const ExternalIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-    <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
-  </svg>
-);
-const MailIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-  </svg>
-);
-// const GameIcon = () => (
-//   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-//     <line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/>
-//     <circle cx="15" cy="11" r="1"/><circle cx="17" cy="13" r="1"/>
-//     <path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
-//   </svg>
-// );
+const go = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
-const scrollTo = (id: string) =>
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-
+// Opened from the keyboard many times a day: no open/close animation, by design.
 export default function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [activeIdx, setActiveIdx] = useState(0);
+  const [note, setNote] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
-  const listRef = useRef<HTMLUListElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+  const returnFocus = useRef<HTMLElement | null>(null);
 
-  const commands: Command[] = [
-    { id: "about",        label: "Go to About",        group: "Navigate", icon: <ArrowIcon />, action: () => scrollTo("about") },
-    { id: "experience",   label: "Go to Experience",   group: "Navigate", icon: <ArrowIcon />, action: () => scrollTo("experience") },
-    { id: "projects",     label: "Go to Projects",     group: "Navigate", icon: <ArrowIcon />, action: () => scrollTo("projects") },
-    { id: "skills",       label: "Go to Skills",       group: "Navigate", icon: <ArrowIcon />, action: () => scrollTo("skills") },
-    { id: "contact",      label: "Go to Contact",      group: "Navigate", icon: <ArrowIcon />, action: () => scrollTo("contact") },
-    { id: "email",        label: "Copy email address", group: "Connect",  icon: <MailIcon />,  action: () => navigator.clipboard.writeText("marko.jagetic3@gmail.com") },
-    { id: "linkedin",     label: "Open LinkedIn",      group: "Connect",  icon: <ExternalIcon />, action: () => window.open("https://www.linkedin.com/in/marko-jagetić", "_blank") },
-  ];
+  const commands: Command[] = useMemo(
+    () => [
+      { id: "top", label: "Title block", group: "Go to", action: () => go("top") },
+      ...SECTIONS.map((s) => ({ id: s.id, label: s.label, group: "Go to", action: () => go(s.id) })),
+      ...projects
+        .filter((p) => p.link)
+        .map((p) => ({ id: `p-${p.title}`, label: `Open ${p.title}`, group: "Applications", hint: "new tab", action: () => window.open(p.link, "_blank", "noopener") })),
+      { id: "copy", label: "Copy email address", group: "Contact", action: () => { navigator.clipboard?.writeText(EMAIL); } },
+      { id: "mail", label: "Email Marko", group: "Contact", action: () => { window.location.href = `mailto:${EMAIL}`; } },
+      { id: "li", label: "Open LinkedIn", group: "Contact", hint: "new tab", action: () => window.open(LINKEDIN, "_blank", "noopener") },
+    ],
+    [],
+  );
 
   const filtered = query.trim()
-    ? commands.filter(c => c.label.toLowerCase().includes(query.toLowerCase()))
+    ? commands.filter((c) => `${c.group} ${c.label}`.toLowerCase().includes(query.trim().toLowerCase()))
     : commands;
+  const groups = [...new Set(filtered.map((c) => c.group))];
 
-  const groups = [...new Set(filtered.map(c => c.group))];
+  const show = () => {
+    returnFocus.current = document.activeElement as HTMLElement;
+    setQuery("");
+    setActiveIdx(0);
+    setOpen(true);
+  };
+  const close = () => {
+    setOpen(false);
+    returnFocus.current?.focus?.();
+  };
 
   const execute = (cmd: Command) => {
     cmd.action();
+    if (cmd.id === "copy") {
+      setNote("Email address copied");
+      setTimeout(() => setNote(""), 1600);
+    }
     setOpen(false);
-    setQuery("");
   };
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        setOpen(o => !o);
-        setQuery("");
-        setActiveIdx(0);
+        if (open) close();
+        else show();
+      } else if (e.key === "Escape" && open) {
+        close();
       }
-      if (e.key === "Escape") setOpen(false);
     };
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, []);
+    window.addEventListener(OPEN_PALETTE, show);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      window.removeEventListener(OPEN_PALETTE, show);
+    };
+  });
 
   useEffect(() => {
-    if (open) setTimeout(() => inputRef.current?.focus(), 50);
+    if (open) inputRef.current?.focus();
   }, [open]);
 
-  useEffect(() => { setActiveIdx(0); }, [query]);
+  useEffect(() => {
+    listRef.current?.querySelector<HTMLElement>('[data-active="true"]')?.scrollIntoView({ block: "nearest" });
+  }, [activeIdx]);
 
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setActiveIdx(i => Math.min(i + 1, filtered.length - 1));
+      setActiveIdx((i) => Math.min(i + 1, filtered.length - 1));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setActiveIdx(i => Math.max(i - 1, 0));
+      setActiveIdx((i) => Math.max(i - 1, 0));
     } else if (e.key === "Enter") {
+      e.preventDefault();
       const cmd = filtered[activeIdx];
       if (cmd) execute(cmd);
+    } else if (e.key === "Tab") {
+      e.preventDefault(); // focus stays in the dialog; arrows move the selection
     }
   };
 
-  useEffect(() => {
-    const el = listRef.current?.querySelector(`[data-active="true"]`) as HTMLElement;
-    el?.scrollIntoView({ block: "nearest" });
-  }, [activeIdx]);
-
-  if (!open) return null;
-
-  let flatIdx = 0;
+  let flat = 0;
 
   return (
-    <div className={styles.overlay} onClick={() => setOpen(false)}>
-      <div className={styles.palette} onClick={e => e.stopPropagation()} onKeyDown={onKeyDown}>
-        <div className={styles.inputWrap}>
-          <svg className={styles.searchIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
-          <input
-            ref={inputRef}
-            className={styles.input}
-            placeholder="Search commands..."
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-          />
-          <kbd className={styles.esc}>esc</kbd>
-        </div>
+    <>
+      <div className={styles.toast} role="status" aria-live="polite" data-show={!!note || undefined}>{note}</div>
+      {open && (
+        <div className={styles.overlay} onMouseDown={close}>
+          <div
+            className={styles.palette}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Command menu"
+            onMouseDown={(e) => e.stopPropagation()}
+            onKeyDown={onKeyDown}
+          >
+            <div className={styles.inputRow}>
+              <label htmlFor="palette-q" className="visuallyHidden">Search sections, projects and contact</label>
+              <input
+                id="palette-q"
+                ref={inputRef}
+                className={styles.input}
+                placeholder="Go to a section, open a project…"
+                value={query}
+                onChange={(e) => { setQuery(e.target.value); setActiveIdx(0); }}
+                role="combobox"
+                aria-expanded="true"
+                aria-controls="palette-list"
+                aria-activedescendant={filtered[activeIdx] ? `cmd-${filtered[activeIdx].id}` : undefined}
+                autoComplete="off"
+                spellCheck={false}
+              />
+              <kbd className={styles.kbd}>Esc</kbd>
+            </div>
 
-        <ul ref={listRef} className={styles.list}>
-          {filtered.length === 0 && (
-            <li className={styles.empty}>No results for "{query}"</li>
-          )}
-          {groups.map(group => (
-            <li key={group}>
-              <div className={styles.group}>{group}</div>
-              <ul>
-                {filtered.filter(c => c.group === group).map(cmd => {
-                  const idx = flatIdx++;
-                  return (
-                    <li key={cmd.id}>
-                      <button
-                        className={`${styles.item} ${activeIdx === idx ? styles.itemActive : ""}`}
-                        data-active={activeIdx === idx}
-                        onMouseEnter={() => setActiveIdx(idx)}
-                        onClick={() => execute(cmd)}
+            <div ref={listRef} id="palette-list" role="listbox" aria-label="Commands" className={styles.list}>
+              {filtered.length === 0 && <p className={styles.empty}>Nothing matches “{query}”.</p>}
+              {groups.map((g) => (
+                <div key={g} role="group" aria-label={g}>
+                  <div className={`label ${styles.group}`}>{g}</div>
+                  {filtered.filter((c) => c.group === g).map((c) => {
+                    const idx = flat++;
+                    const active = idx === activeIdx;
+                    return (
+                      <div
+                        key={c.id}
+                        id={`cmd-${c.id}`}
+                        role="option"
+                        aria-selected={active}
+                        data-active={active}
+                        className={styles.item}
+                        onMouseMove={() => setActiveIdx(idx)}
+                        onClick={() => execute(c)}
                       >
-                        <span className={styles.itemIcon}>{cmd.icon}</span>
-                        {cmd.label}
-                        {cmd.group === "Connect" || cmd.group === "Navigate"
-                          ? <span className={styles.itemArrow}>↵</span>
-                          : null}
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </li>
-          ))}
-        </ul>
+                        <span>{c.label}</span>
+                        {c.hint && <span className={styles.hint}>{c.hint}</span>}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
 
-        <div className={styles.footer}>
-          <span><kbd>↑↓</kbd> navigate</span>
-          <span><kbd>↵</kbd> select</span>
-          <span><kbd>esc</kbd> close</span>
+            <div className={styles.footer}>
+              <span><kbd className={styles.kbd}>↑</kbd> <kbd className={styles.kbd}>↓</kbd> move</span>
+              <span><kbd className={styles.kbd}>Enter</kbd> open</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }

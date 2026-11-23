@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T14:54:38+00:00",
+  "title": "Design System: jagetic.com",
+  "extensions": {
+    "colorMeta": {
+      "green": {
+        "role": "primary",
+        "displayName": "Solder-Mask Green",
+        "canonical": "#0e6b45",
+        "tonalRamp": [
+          "#153729",
+          "#1e694a",
+          "#21a06c",
+          "#1edd8f",
+          "#58dea7",
+          "#90e0bf",
+          "#c2e8d9",
+          "#eef7f3"
+        ]
+      },
+      "green-deep": {
+        "role": "primary",
+        "displayName": "Deep Mask Green",
+        "canonical": "#0a5236",
+        "tonalRamp": [
+          "#15382a",
+          "#1e694c",
+          "#20a16f",
+          "#1cdf93",
+          "#57dfaa",
+          "#8fe1c1",
+          "#c2e9d9",
+          "#eef7f3"
+        ]
+      },
+      "green-ink": {
+        "role": "primary",
+        "displayName": "Mask Ink",
+        "canonical": "#eef6f1",
+        "tonalRamp": [
+          "#1f2d25",
+          "#355240",
+          "#477a5a",
+          "#57a474",
+          "#80b694",
+          "#a8c8b4",
+          "#cdddd3",
+          "#f0f4f2"
+        ]
+      },
+      "green-ink-2": {
+        "role": "primary",
+        "displayName": "Mask Ink Dim",
+        "canonical": "#c9e4d5",
+        "tonalRamp": [
+          "#1f2e25",
+          "#335442",
+          "#457c5d",
+          "#54a779",
+          "#7eb898",
+          "#a7c9b6",
+          "#cdddd4",
+          "#f0f4f2"
+        ]
+      },
+      "green-tint": {
+        "role": "primary",
+        "displayName": "Mask Tint",
+        "canonical": "#dcebe2",
+        "tonalRamp": [
+          "#202c25",
+          "#365141",
+          "#4a775c",
+          "#5ca077",
+          "#83b396",
+          "#aac6b5",
+          "#cedcd4",
+          "#f1f4f2"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f6f7f5",
+        "tonalRamp": [
+          "#262924",
+          "#43493e",
+          "#616a57",
+          "#7e8c70",
+          "#9ba591",
+          "#b8beb2",
+          "#d5d8d2",
+          "#f2f3f2"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Paper Shade",
+        "canonical": "#eceeea",
+        "tonalRamp": [
+          "#262924",
+          "#43483e",
+          "#616958",
+          "#7e8b71",
+          "#9ba492",
+          "#b8bdb2",
+          "#d5d8d2",
+          "#f2f3f2"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Carbon Ink",
+        "canonical": "#121412",
+        "tonalRamp": [
+          "#252725",
+          "#414641",
+          "#5c655c",
+          "#778477",
+          "#969f96",
+          "#b5bbb5",
+          "#d4d6d4",
+          "#f2f3f2"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#444a45",
+        "tonalRamp": [
+          "#252726",
+          "#414542",
+          "#5d645e",
+          "#78837a",
+          "#979f98",
+          "#b6bab6",
+          "#d4d6d4",
+          "#f2f2f2"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Pencil",
+        "canonical": "#5f665f",
+        "tonalRamp": [
+          "#252725",
+          "#424542",
+          "#5e635e",
+          "#798279",
+          "#989e98",
+          "#b6bab6",
+          "#d4d6d4",
+          "#f2f2f2"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(18, 20, 18, 0.16)",
+        "tonalRamp": [
+          "#252725",
+          "#414641",
+          "#5c655c",
+          "#778477",
+          "#969f96",
+          "#b5bbb5",
+          "#d4d6d4",
+          "#f2f3f2"
+        ],
+        "note": "Carbon ink at 16% alpha; ramp shown for the base ink hue."
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "canonical": "#121412",
+        "tonalRamp": [
+          "#252725",
+          "#414641",
+          "#5c655c",
+          "#778477",
+          "#969f96",
+          "#b5bbb5",
+          "#d4d6d4",
+          "#f2f3f2"
+        ]
+      },
+      "field": {
+        "role": "neutral",
+        "displayName": "Field White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#434343",
+          "#616161",
+          "#7e7e7e",
+          "#9b9b9b",
+          "#b8b8b8",
+          "#d5d5d5",
+          "#f2f2f2"
+        ]
+      },
+      "error": {
+        "role": "error",
+        "displayName": "Fault Red",
+        "canonical": "#a3261b",
+        "tonalRamp": [
+          "#361916",
+          "#662621",
+          "#9c2f26",
+          "#d73324",
+          "#d9665c",
+          "#dd9993",
+          "#e7c6c3",
+          "#f6efee"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the title block only. Archivo 800 at width 125%."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2s on the section's top rule. Archivo 700 at width 125%."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project, employer and sub-table heads (--h3). Width 125%."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Feature lists, section intros and project summaries, 44–52ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading text with tabular numerals."
+      },
+      "table": {
+        "displayName": "Table",
+        "purpose": "Table cells, spec rows and revision changes."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Table heads, spec keys, form labels. Condensed (width 78%), sentence case, never all caps."
+      }
+    },
+    "shadows": [
+      {
+        "name": "overlay",
+        "value": "0 24px 48px -12px rgba(18,20,18,.35), 0 2px 6px rgba(18,20,18,.12)",
+        "purpose": "Command palette only, above a rgba(18,20,18,.32) scrim. Nothing on the page casts a shadow."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Default easing for entrances, presses, image zoom and the link draw."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Defined for on-screen movement; currently unused by the home page."
+      },
+      {
+        "name": "title-wipe",
+        "value": "clip-path inset(0 100% 0 0) → inset(0), 760ms ease-out, once",
+        "purpose": "Title-block entrance."
+      },
+      {
+        "name": "content-rise",
+        "value": "opacity 0 + translateY(10px) → rest, 520ms ease-out, delays 380ms / 460ms",
+        "purpose": "Hero feature column then screenshot column follow the wipe."
+      },
+      {
+        "name": "image-zoom",
+        "value": "transform scale(1.02), 300ms ease-out",
+        "purpose": "Screenshot hover inside its flat frame; frames never lift."
+      },
+      {
+        "name": "press",
+        "value": "transform scale(0.97), 160ms ease-out",
+        "purpose": "Buttons, copy, search and menu triggers on :active."
+      },
+      {
+        "name": "state-color",
+        "value": "140–160ms ease",
+        "purpose": "Colour, border and background changes on hover and active state (pins, ratings, links, rows)."
+      },
+      {
+        "name": "link-draw",
+        "value": "background-size 0% → 100% 1px, 360ms ease-out",
+        "purpose": "Text-link underline redraws from the left on hover."
+      },
+      {
+        "name": "sheet-stagger",
+        "value": "rise 260ms ease-out, delays 0/30/55/75ms",
+        "purpose": "Mobile nav sheet rows."
+      },
+      {
+        "name": "palette",
+        "value": "none",
+        "purpose": "The command palette opens and closes without animation by design; only its toast fades (200ms)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Title wipe, content rise, sheet stagger, easter-egg particles and pop are removed; the toast keeps only its fade."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-sm",
+        "value": "440px"
+      },
+      {
+        "name": "phone",
+        "value": "520px"
+      },
+      {
+        "name": "phone-lg",
+        "value": "600px"
+      },
+      {
+        "name": "table-stack",
+        "value": "720px"
+      },
+      {
+        "name": "nav-collapse",
+        "value": "860px"
+      },
+      {
+        "name": "split-stack",
+        "value": "900px"
+      },
+      {
+        "name": "revision-stack",
+        "value": "960px"
+      },
+      {
+        "name": "nav-tight",
+        "value": "1080px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main action (Email Marko, Send). Ink fill, green on hover, presses to 0.97.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Email Marko</button>",
+      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-btn{font-family:var(--font);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;font-weight:600;font-size:16px;border:1px solid var(--ink);border-radius:0;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,border-color 160ms ease,transform 160ms var(--ease-out);} .ds-btn:active{transform:scale(.97);} .ds-btn:focus-visible{outline:2px solid var(--green);outline-offset:3px;} .ds-btn-primary{background:var(--ink);color:var(--paper);} .ds-btn-primary:hover{background:var(--green);border-color:var(--green);}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action (LinkedIn). Ink outline, inverts to ink on hover.",
+      "html": "<button class=\"ds-btn ds-btn-ghost\">LinkedIn</button>",
+      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-btn{font-family:var(--font);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;font-weight:600;font-size:16px;border:1px solid var(--ink);border-radius:0;cursor:pointer;transition:background-color 160ms ease,color 160ms ease,transform 160ms var(--ease-out);} .ds-btn:active{transform:scale(.97);} .ds-btn:focus-visible{outline:2px solid var(--green);outline-offset:3px;} .ds-btn-ghost{background:transparent;color:var(--ink);} .ds-btn-ghost:hover{background:var(--ink);color:var(--paper);}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "link",
+      "description": "Inline link; underline redraws from the left and text turns green on hover.",
+      "html": "<p class=\"ds-p\">Live at <a class=\"ds-link\" href=\"#\">proarda.com</a></p>",
+      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-p{font-family:var(--font);font-size:17px;color:var(--ink);} .ds-link{color:inherit;text-decoration:none;font-weight:600;background-image:linear-gradient(currentColor,currentColor);background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:1px;transition:color 160ms ease;} .ds-link:hover{color:var(--green);animation:ds-draw 360ms var(--ease-out);} .ds-link:focus-visible{background-color:var(--green-tint);outline:2px solid var(--green);outline-offset:2px;} @keyframes ds-draw{from{background-size:0% 1px;}to{background-size:100% 1px;}}"
+    },
+    {
+      "name": "Spec Table",
+      "kind": "custom",
+      "refersTo": "spec-table-row",
+      "description": "The core component: condensed label / value rows on hairline rules under an ink top rule.",
+      "html": "<dl class=\"ds-spec\"><div class=\"ds-row\"><dt class=\"ds-label\">Role</dt><dd>Full-stack engineer</dd></div><div class=\"ds-row\"><dt class=\"ds-label\">Stack</dt><dd>NestJS, React, Postgres, Yjs</dd></div><div class=\"ds-row\"><dt class=\"ds-label\">Status</dt><dd>Live, self-hosted</dd></div></dl>",
+      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-spec{font-family:var(--font);margin:0;border-top:1px solid var(--rule-strong);color:var(--ink);font-variant-numeric:tabular-nums;} .ds-row{display:grid;grid-template-columns:112px minmax(0,1fr);gap:16px;padding:10px 0;border-bottom:1px solid var(--rule);font-size:16px;line-height:1.4;} .ds-row dd{margin:0;} .ds-label{font-stretch:78%;font-weight:600;font-size:14px;letter-spacing:.01em;color:var(--ink-3);padding-top:2px;}"
+    },
+    {
+      "name": "Title Block",
+      "kind": "card",
+      "refersTo": "title-block",
+      "description": "The one green field: expanded display name, description, document meta. Wipes in once.",
+      "html": "<header class=\"ds-tb\"><div><h1 class=\"ds-tb-name\">Marko Jagetić</h1><p class=\"ds-tb-desc\">Full-stack engineer in Zagreb</p></div><dl class=\"ds-tb-meta\"><dt>Document</dt><dd>MJ-01</dd><dt>Revision</dt><dd>2026-11</dd></dl></header>",
+      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-tb{font-family:var(--font);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end;background:var(--green);color:var(--green-ink);padding:28px 32px;animation:ds-wipe 760ms var(--ease-out) both;} .ds-tb-name{margin:0;font-size:56px;font-stretch:125%;font-weight:800;letter-spacing:-.035em;line-height:.92;} .ds-tb-desc{margin:14px 0 0;font-size:20px;font-weight:500;} .ds-tb-meta{display:grid;grid-template-columns:auto auto;margin:0;border-top:1px solid var(--green-ink-2);font-size:15px;font-variant-numeric:tabular-nums;} .ds-tb-meta dt,.ds-tb-meta dd{margin:0;padding:6px 0;border-bottom:1px solid color-mix(in srgb,var(--green-ink-2) 55%,transparent);font-weight:600;} .ds-tb-meta dt{font-stretch:78%;color:var(--green-ink-2);padding-right:28px;} .ds-tb-meta dd{text-align:right;} @keyframes ds-wipe{from{clip-path:inset(0 100% 0 0);}to{clip-path:inset(0);}} @media (prefers-reduced-motion:reduce){.ds-tb{animation:none;}}"
+    },
+    {
+      "name": "Image Frame",
+      "kind": "card",
+      "refersTo": "frame",
+      "description": "Screenshot in a flat 1px ink frame; the image zooms 1.02 inside on hover, nothing lifts.",
+      "html": "<a class=\"ds-frame\" href=\"#\"><div class=\"ds-shot\"></div></a>",
+      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-frame{display:block;width:320px;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--rule-strong);background:var(--paper-2);} .ds-shot{width:100%;height:100%;background:linear-gradient(var(--ink),var(--ink)) 0 0/100% 14% no-repeat,repeating-linear-gradient(var(--paper) 0 18px,var(--paper-2) 18px 20px);transition:transform 300ms var(--ease-out);} .ds-frame:hover .ds-shot{transform:scale(1.02);} .ds-frame:focus-visible{outline:3px solid var(--green);outline-offset:4px;}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Square field, white fill, ink baseline; green border and ring on focus.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-label\">Your email</span><input class=\"ds-input\" placeholder=\"you@example.com\"></label>",
+      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-field{font-family:var(--font);display:grid;gap:8px;width:320px;} .ds-label{font-stretch:78%;font-weight:600;font-size:14px;letter-spacing:.01em;color:var(--ink-3);} .ds-input{font-family:var(--font);min-height:48px;padding:12px 14px;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--rule);border-bottom-color:var(--ink);border-radius:0;caret-color:var(--green);transition:border-color 160ms ease,box-shadow 160ms ease;} .ds-input:hover{border-color:var(--ink-3);border-bottom-color:var(--ink);} .ds-input:focus-visible{outline:none;border-color:var(--green);box-shadow:0 0 0 1px var(--green);} .ds-input[aria-invalid=true]{border-color:#a3261b;}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Fixed translucent paper bar: monogram chip, graphite links that turn green, search trigger with keycap, compact CTA.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-mark\" href=\"#\"><span class=\"ds-chip\">MJ</span>Marko Jagetić</a><div class=\"ds-links\"><a class=\"ds-navlink\" href=\"#\">Applications</a><a class=\"ds-navlink\" href=\"#\">History</a><a class=\"ds-navlink\" href=\"#\">Characteristics</a></div><button class=\"ds-search\">Search <kbd class=\"ds-kbd\">⌘K</kbd></button></nav>",
+      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-nav{font-family:var(--font);display:flex;align-items:center;gap:24px;height:56px;padding:0 16px;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--rule-strong);color:var(--ink);} .ds-mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font-weight:700;font-stretch:78%;font-size:17px;} .ds-chip{display:inline-grid;place-items:center;width:30px;height:22px;background:var(--ink);color:var(--paper);font-size:12px;font-weight:700;font-stretch:125%;} .ds-links{display:flex;gap:4px;margin-left:auto;} .ds-navlink{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;text-decoration:none;font-size:15px;font-weight:500;color:var(--ink-2);transition:color 160ms ease;} .ds-navlink:hover{color:var(--green);} .ds-navlink:focus-visible,.ds-search:focus-visible{outline:2px solid var(--green);outline-offset:3px;} .ds-search{font-family:var(--font);display:inline-flex;align-items:center;gap:10px;min-height:36px;padding:0 6px 0 12px;background:none;border:1px solid var(--rule);font-size:14px;font-weight:500;color:var(--ink-2);cursor:pointer;transition:border-color 160ms ease,color 160ms ease,transform 160ms var(--ease-out);} .ds-search:hover{border-color:var(--ink);color:var(--ink);} .ds-search:active{transform:scale(.97);} .ds-kbd{font-family:inherit;font-stretch:78%;font-size:12px;font-weight:600;padding:2px 6px;background:var(--paper-2);border:1px solid var(--rule);}"
+    },
+    {
+      "name": "Revision Row",
+      "kind": "custom",
+      "refersTo": "revision",
+      "description": "Career as a revision table; the current revision's letter box is green.",
+      "html": "<div class=\"ds-rev\" data-current><span class=\"ds-letter\">D</span><span class=\"ds-dates\">Mar 2026 – now</span><div><h3 class=\"ds-who\">Njuškalo</h3><p class=\"ds-role\">Software Engineer</p></div></div>",
+      "css": ":host{--paper:#f6f7f5;--paper-2:#eceeea;--ink:#121412;--ink-2:#444a45;--ink-3:#5f665f;--rule:rgba(18,20,18,.16);--rule-strong:#121412;--green:#0e6b45;--green-ink:#eef6f1;--green-ink-2:#c9e4d5;--green-tint:#dcebe2;--ease-out:cubic-bezier(0.23,1,0.32,1);--font:\"Archivo\",ui-sans-serif,system-ui,sans-serif;} .ds-rev{font-family:var(--font);display:grid;grid-template-columns:56px 160px minmax(0,1fr);gap:24px;padding:22px 0;border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule);color:var(--ink);font-variant-numeric:tabular-nums;} .ds-letter{display:inline-grid;place-items:center;width:32px;height:32px;border:1px solid var(--ink);font-weight:700;font-stretch:125%;} .ds-rev[data-current] .ds-letter{background:var(--green);border-color:var(--green);color:var(--green-ink);} .ds-dates{font-weight:600;font-stretch:78%;font-size:16px;padding-top:4px;} .ds-who{margin:0 0 4px;font-size:24px;font-stretch:125%;letter-spacing:-.01em;line-height:1.1;} .ds-role{margin:0;font-size:16px;color:var(--ink-2);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Component Datasheet",
+    "overview": "The site reads like the datasheet for a part an engineer can spec in a minute. It has a title block, a feature list, typical applications, a revision history, electrical-style characteristics and ordering information. Everything sits on cool white paper in carbon ink and is organised by hairline rules. The ruled table is the core component: projects, career, skills and contact details are all rows with a condensed label and a value. Density is moderate. Each section fills a screen and opens on a full-width ink rule, and inside it the content is tight and tabular rather than spread over cards.\n\nOne solder-mask green does two jobs: it fills the title-block band, and it marks state (the selected pin, focus, the live link, the hovered primary button, the active command). It is never used for decoration. The page is flat, with no glow and no gradients, and corners are square throughout. Screenshots sit flat inside a 1px ink frame and zoom slightly inside it on hover; they never lift. This replaces the previous dark \"dev portfolio\" look. The rejected template is a dark ground, a centred name, typewriter roles, a stat strip and a grid of equal cards.\n\nTypography is one family, Archivo, used across its width axis. The expanded width is for the name and headings, the condensed width for table heads, labels and metadata, and the normal width for reading. Wherever numbers appear they are tabular.",
+    "keyCharacteristics": [
+      "Paper ground, carbon ink, 1px rules at 16% ink; strong rules in full ink at section and table edges.",
+      "One green, used only for the title block and for active states.",
+      "Ruled tables and label/value rows rather than cards.",
+      "Archivo variable: wide (125%) for display, narrow (78%) for labels, normal for body. Tabular numerals globally.",
+      "Square corners everywhere; flat surfaces; image frames instead of shadows.",
+      "Motion: one clip-path wipe of the title band, a short content stagger, a 1.02 zoom inside frames, and a 0.97 press on buttons."
+    ],
+    "rules": [
+      {
+        "name": "The One Green Rule",
+        "body": "Green appears in two places only: the title block and active states (selected, focused, live, hovered primary, current revision). If green is on screen and nothing is selected, focused or hovered, it must be the title block.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Hierarchy Rule",
+        "body": "Text uses three inks: `ink` for content, `ink-2` for supporting prose, `ink-3` for labels and metadata. Don't add a fourth grey.",
+        "section": "colors"
+      },
+      {
+        "name": "The Width-Axis Rule",
+        "body": "Hierarchy comes from width before size: wide for names and headings, narrow for labels and metadata, normal for prose. Never bring in a second family.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Caps Label Rule",
+        "body": "Labels are condensed and in sentence case, never all caps or letter-spaced into kickers. A label belongs to a table head or a key/value row. It never floats above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Numerals are tabular everywhere (`font-variant-numeric: tabular-nums` on body), so dates, revisions and values line up in columns.",
+        "section": "typography"
+      },
+      {
+        "name": "The Column-Six Rule",
+        "body": "The second column of every split starts at grid line 6. Don't invent other split ratios for a new section.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Sheet Rule",
+        "body": "Nothing on the page casts a shadow. The one exception is the modal command palette, which sits above the page.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Frame-Not-Lift Rule",
+        "body": "Images respond inside their frame (scale 1.02, 300ms ease-out). Frames and cards never translate, rise or gain a shadow on hover.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Corner Rule",
+        "body": "Radius is 0. The IC package notch is a drawn object, not a precedent for rounded UI.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** build new content as ruled rows: a condensed sentence-case label, a value, and a 16% hairline between rows, with full ink rules at the top and bottom of the table.",
+      "**Do** keep green to the title block and to state (selected, focused, live, current, primary hover).",
+      "**Do** start every split's second column at grid line 6 of the 12-column wrap (1240px, gutter clamp(16px, 4vw, 48px)).",
+      "**Do** use Archivo's width axis for hierarchy: wide (125%) for names and headings, narrow (78%) for labels, normal for prose.",
+      "**Do** put screenshots in a 1px ink frame and respond to hover inside it (scale 1.02, 300ms, cubic-bezier(0.23, 1, 0.32, 1)).",
+      "**Do** press buttons to 0.97, and let entrances run once: the title wipe at 760ms, then content at 380ms and 460ms delays.",
+      "**Do** bring every entrance to rest under `prefers-reduced-motion: reduce`."
+    ],
+    "donts": [
+      "**Don't** use a dark ground, a centred name, typewriter roles, a stat strip or a grid of equal cards. That is the dev-portfolio look this system replaced.",
+      "**Don't** round corners, add gradients or glow, or lift anything on hover. Only the modal palette casts a shadow.",
+      "**Don't** use green as decoration, as a section background beyond the title block, or for a second accent.",
+      "**Don't** set labels in all caps or float them above headings as eyebrows.",
+      "**Don't** animate the command palette's open or close.",
+      "**Don't** add a second typeface or a monospace face. Keycaps and pin numbers use narrow Archivo."
+    ]
+  }
+}

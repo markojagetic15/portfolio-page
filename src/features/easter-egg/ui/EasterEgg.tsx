@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { EMAIL } from "../../../shared/config";
 import styles from "./EasterEgg.module.css";
 
-const COLORS = ["#58a6ff", "#bc8cff", "#3fb950", "#ffa657", "#ff7b72"];
+const COLORS = ["#0e6b45", "#121412", "#0e6b45", "#dcebe2", "#5f665f"];
 
 interface Particle {
   id: number;
@@ -69,20 +70,13 @@ export default function EasterEgg() {
           } as React.CSSProperties}
         />
       ))}
-      <div className={styles.message}>
-        <span className={styles.emoji}>👋</span>
-        <h2 className={styles.title}>Good call.</h2>
-        <p className={styles.sub}>
-          You typed <code>hire me</code> - let's make it official.
-        </p>
-        <a
-          href="mailto:marko.jagetic3@gmail.com"
-          className={styles.cta}
-          onClick={e => e.stopPropagation()}
-        >
-          Send that email
+      <div className={styles.message} role="dialog" aria-label="Easter egg">
+        <h2 className={styles.title}>You typed “hire me”.</h2>
+        <p className={styles.sub}>Noted. The right place for that is an email.</p>
+        <a href={`mailto:${EMAIL}`} className="btn btnPrimary" onClick={(e) => e.stopPropagation()}>
+          Email Marko
         </a>
-        <span className={styles.hint}>click anywhere to close</span>
+        <span className={styles.hint}>Click anywhere to close</span>
       </div>
     </div>
   );

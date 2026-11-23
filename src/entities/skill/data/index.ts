@@ -1,4 +1,4 @@
-import { Skill } from "../model/types";
+import type { Skill } from "../model/types";
 
 export const skills: Skill[] = [
   { label: "React / Next.js", level: 95 },

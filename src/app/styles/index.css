@@ -1,120 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@700;800&display=swap');
+/* jagetic.com: datasheet world.
+   Paper, carbon ink, hairline rules, one solder-mask green that owns the
+   title block and every active state. Archivo across its width axis. */
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url("/fonts/archivo-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url("/fonts/archivo-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
-  --bg: #080b14;
-  --bg-card: #0d1117;
-  --bg-card-hover: #131923;
-  --border: rgba(255, 255, 255, 0.07);
-  --border-hover: rgba(255, 255, 255, 0.15);
-  --text: #e6edf3;
-  --text-muted: #7d8590;
-  --text-subtle: #4a5568;
-  --accent: #58a6ff;
-  --accent-glow: rgba(88, 166, 255, 0.12);
-  --green: #3fb950;
-  --purple: #bc8cff;
-  --orange: #ffa657;
-  --radius: 12px;
-  --radius-lg: 20px;
-  --font-mono: 'JetBrains Mono', monospace;
+  color-scheme: light;
+
+  --paper: #f6f7f5;
+  --paper-2: #eceeea;
+  --ink: #121412;
+  --ink-2: #444a45;
+  --ink-3: #5f665f;
+  --rule: rgba(18, 20, 18, 0.16);
+  --rule-strong: #121412;
+  --green: #0e6b45;
+  --green-deep: #0a5236;
+  --green-ink: #eef6f1;
+  --green-ink-2: #c9e4d5;
+  --green-tint: #dcebe2;
+
+  --font: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wide: 125%;
+  --narrow: 78%;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --wrap: 1240px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --nav-h: 56px;
+  --h3: clamp(22px, 2vw, 28px);
 }
 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 html {
-  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.55;
+  background: var(--paper);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+button, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; }
+ul, ol { list-style: none; }
+h1, h2, h3 { font-weight: 700; line-height: 1.1; text-wrap: balance; }
+p { text-wrap: pretty; }
 
-::selection {
-  background: rgba(63, 185, 80, 0.3);
-  color: #ffffff;
-  text-shadow: 0 0 16px rgba(63, 185, 80, 0.8);
-}
+/* Browser surfaces carry the world too. */
+::selection { background: var(--green); color: var(--green-ink); }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+html { scrollbar-color: var(--ink-3) var(--paper-2); }
+input, textarea { caret-color: var(--green); }
 
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; cursor: pointer; }
+#root { min-height: 100vh; }
 
-#root {
-  width: 100%;
-  min-height: 100vh;
-}
-
-/* Section divider */
-.sectionDivider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--border), transparent);
-  max-width: 1100px;
-  margin: 0 auto;
+.wrap {
+  width: min(var(--wrap), 100% - var(--gutter) * 2);
+  margin-inline: auto;
 }
 
-/* Scroll-reveal system */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+/* One 12-column grid for every split: text in columns 1-5, the visual or
+   the second column from line 6 to the right edge. */
+.split {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 32px;
+}
+.split > :first-child { grid-column: 1 / span 5; }
+.split > :last-child { grid-column: 6 / -1; }
+@media (max-width: 900px) {
+  .split > :first-child, .split > :last-child { grid-column: 1 / -1; }
 }
 
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -64px;
+  z-index: 1000;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 12px 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.skip:focus-visible { top: 12px; }
+
+/* Section frame: every section opens with its h2 on a full-width rule. */
+.section {
+  min-height: 100svh;
+  padding-block: clamp(64px, 9vw, 120px);
+  border-top: 1px solid var(--rule-strong);
+}
+.sectionHead {
+  align-items: end;
+  row-gap: 16px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+.sectionHead h2 {
+  font-size: clamp(34px, 4.1vw, 56px);
+  font-stretch: var(--wide);
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+.sectionHead p {
+  color: var(--ink-2);
+  max-width: 52ch;
+  font-size: 18px;
 }
 
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal-left.revealed {
-  opacity: 1;
-  transform: translateX(0);
+
+/* Datasheet table head label: condensed, never all caps. */
+.label {
+  font-stretch: var(--narrow);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  color: var(--ink-3);
 }
 
-.reveal-right {
-  opacity: 0;
-  transform: translateX(28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+/* Buttons: square, step on hover, press on click. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 22px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  border: 1px solid var(--ink);
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms var(--ease-out);
+  user-select: none;
 }
-.reveal-right.revealed {
-  opacity: 1;
-  transform: translateX(0);
+.btn:active { transform: scale(0.97); }
+.btnPrimary { background: var(--ink); color: var(--paper); }
+.btnGhost { background: transparent; color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  .btnPrimary:hover { background: var(--green); border-color: var(--green); }
+  .btnGhost:hover { background: var(--ink); color: var(--paper); }
+}
+.btn svg { flex: none; }
+
+/* Inline text link: underline draws from the left on hover. */
+.link {
+  text-decoration: none;
+  font-weight: 600;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 1px;
+  transition: color 160ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .link:hover { color: var(--green); animation: draw 360ms var(--ease-out); }
+}
+.link:focus-visible { background-color: var(--green-tint); outline-offset: 2px; }
+@keyframes draw {
+  from { background-size: 0% 1px; }
+  to { background-size: 100% 1px; }
 }
 
-/* Stagger children */
-.stagger.revealed > .reveal {
-  opacity: 1;
-  transform: translateY(0);
+/* Small square bullet used in feature lists. */
+/* Bullets hang in the margin so the text keeps the column line. */
+.bullets li { position: relative; }
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  background: var(--ink);
 }
 
-.stagger > *:nth-child(1)  { transition-delay: 0.05s; }
-.stagger > *:nth-child(2)  { transition-delay: 0.10s; }
-.stagger > *:nth-child(3)  { transition-delay: 0.15s; }
-.stagger > *:nth-child(4)  { transition-delay: 0.20s; }
-.stagger > *:nth-child(5)  { transition-delay: 0.25s; }
-.stagger > *:nth-child(6)  { transition-delay: 0.30s; }
-.stagger > *:nth-child(7)  { transition-delay: 0.35s; }
-.stagger > *:nth-child(8)  { transition-delay: 0.40s; }
-.stagger > *:nth-child(9)  { transition-delay: 0.45s; }
-.stagger > *:nth-child(10) { transition-delay: 0.50s; }
-.stagger > *:nth-child(11) { transition-delay: 0.55s; }
-.stagger > *:nth-child(12) { transition-delay: 0.60s; }
+@media (max-width: 600px) {
+  .bullets li { padding-left: 14px; }
+  .bullets li::before { left: 0; width: 6px; height: 6px; }
+}
+
+.visuallyHidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
